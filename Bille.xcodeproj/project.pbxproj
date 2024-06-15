@@ -11,6 +11,8 @@
 		96B339A72C1D306800B910A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B339A62C1D306800B910A5 /* ContentView.swift */; };
 		96B339A92C1D306900B910A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B339A82C1D306900B910A5 /* Assets.xcassets */; };
 		96B339AC2C1D306900B910A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B339AB2C1D306900B910A5 /* Preview Assets.xcassets */; };
+		96B339B92C1D34EE00B910A5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B339B82C1D34EE00B910A5 /* User.swift */; };
+		96B339BB2C1D423B00B910A5 /* RegisterModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B339BA2C1D423B00B910A5 /* RegisterModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		96B339A62C1D306800B910A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		96B339A82C1D306900B910A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96B339AB2C1D306900B910A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		96B339B82C1D34EE00B910A5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		96B339BA2C1D423B00B910A5 /* RegisterModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,13 @@
 		96B339A32C1D306800B910A5 /* Bille */ = {
 			isa = PBXGroup;
 			children = (
+				96B339B72C1D345C00B910A5 /* Tests */,
+				96B339B62C1D345500B910A5 /* Utils */,
+				96B339B52C1D344C00B910A5 /* Components */,
+				96B339B42C1D344600B910A5 /* View */,
+				96B339B32C1D343D00B910A5 /* ViewModel */,
+				96B339B22C1D343700B910A5 /* Model */,
 				96B339A42C1D306800B910A5 /* BilleApp.swift */,
-				96B339A62C1D306800B910A5 /* ContentView.swift */,
 				96B339A82C1D306900B910A5 /* Assets.xcassets */,
 				96B339AA2C1D306900B910A5 /* Preview Content */,
 			);
@@ -65,6 +74,51 @@
 				96B339AB2C1D306900B910A5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		96B339B22C1D343700B910A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96B339B82C1D34EE00B910A5 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96B339B32C1D343D00B910A5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		96B339B42C1D344600B910A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96B339BA2C1D423B00B910A5 /* RegisterModal.swift */,
+				96B339A62C1D306800B910A5 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96B339B52C1D344C00B910A5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		96B339B62C1D345500B910A5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		96B339B72C1D345C00B910A5 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +191,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B339BB2C1D423B00B910A5 /* RegisterModal.swift in Sources */,
 				96B339A72C1D306800B910A5 /* ContentView.swift in Sources */,
 				96B339A52C1D306800B910A5 /* BilleApp.swift in Sources */,
+				96B339B92C1D34EE00B910A5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
