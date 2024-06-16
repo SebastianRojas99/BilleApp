@@ -9,7 +9,24 @@ import SwiftUI
 
 struct RegisterModal: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Image("walletRegister")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+            VStack{
+                Text("Welcome to Bille")
+                    .font(.system(size: 36))
+                    .foregroundStyle(.white)
+                    .bold()
+                    .fontWeight(.heavy)
+                    .shadow(color: .purple, radius: 8)
+                    .underline()
+                    .padding(.top,20)
+                Spacer()
+            }
+            
+        }
     }
 }
 

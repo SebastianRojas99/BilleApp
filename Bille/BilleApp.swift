@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct BilleApp: App {
+    @State var userVM = UserVM()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RegisterView().environment(userVM)
         }
     }
 }
