@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RegisterModal: View {
+    @State private var pulsate:Bool = false
     var body: some View {
         ZStack{
             Image("walletRegister")
@@ -15,6 +16,23 @@ struct RegisterModal: View {
                 .scaledToFill()
                 .ignoresSafeArea()
             VStack{
+                Image(systemName: "creditcard.fill")
+                    .resizable()
+                    .foregroundStyle(.purple)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 100, height: 50)
+                    .foregroundColor(.blue)
+                    .scaleEffect(pulsate ? 1.2 : 1.0)
+                    .padding(.top)
+                    .onAppear {
+                        withAnimation(
+                            Animation.easeInOut(duration: 1.0)
+                                .repeatForever(autoreverses: true)
+                        ) {
+                            self.pulsate = true
+                        }
+                    }
+                
                 Text("Welcome to Bille")
                     .font(.system(size: 36))
                     .foregroundStyle(.white)
@@ -23,6 +41,7 @@ struct RegisterModal: View {
                     .shadow(color: .purple, radius: 8)
                     .underline()
                     .padding(.top,20)
+                
                 Spacer()
             }
             
