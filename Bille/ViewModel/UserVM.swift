@@ -13,8 +13,6 @@ import Observation
 class UserVM{
     var username:String?
     var password:String?
-    var hasError = false
-    var errorMessage: String? = nil
     
     var userList: [User] = []
     

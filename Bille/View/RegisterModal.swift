@@ -9,16 +9,25 @@ import SwiftUI
 
 struct RegisterModal: View {
     @State private var pulsate:Bool = false
+    @State private var isPresented:Bool = false
+    @Environment(UserVM.self) private var userVM
+    @Environment(\.dismiss.self) private var dismiss
+    @State private var isLogged:Bool = false
     var body: some View {
         ZStack{
-            Image("walletRegister")
-                .resizable()
-                .scaledToFill()
-                .ignoresSafeArea()
+            Button{
+                isPresented.toggle()
+            }label: {
+                Image("walletRegister")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea()
+            }
+            
             VStack{
                 Image(systemName: "creditcard.fill")
                     .resizable()
-                    .foregroundStyle(.purple)
+                    .foregroundStyle(pulsate ? .purple.opacity(1) : .purple.opacity(0.4) )
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 50)
                     .foregroundColor(.blue)
@@ -46,9 +55,12 @@ struct RegisterModal: View {
             }
             
         }
+        .sheet(isPresented: $isPresented, content: {
+            LoginView().environment(userVM)
+        })
     }
 }
 
 #Preview {
-    RegisterModal()
+    RegisterModal().environment(UserVM())
 }

@@ -125,7 +125,7 @@ struct LoginView: View {
                         .foregroundStyle(.white)
                 }.padding(.bottom,30)
             }.background(Color.white).foregroundStyle(.gray)
-        }
+        }.background(.ultraThickMaterial)
         
     }
     
