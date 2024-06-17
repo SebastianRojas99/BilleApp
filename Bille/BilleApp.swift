@@ -12,7 +12,7 @@ struct BilleApp: App {
     @State var userVM = UserVM()
     var body: some Scene {
         WindowGroup {
-            RegisterView().environment(userVM)
+            RegisterModal().environment(userVM)
         }
     }
 }

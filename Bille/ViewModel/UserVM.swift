@@ -23,5 +23,8 @@ class UserVM{
                 }
                 return false
             }
+    func register(){
+        
+    }
 }
 

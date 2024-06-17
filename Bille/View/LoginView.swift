@@ -12,7 +12,7 @@ struct LoginView: View {
     @Environment(UserVM.self) var userVM
     @State private var username: String = ""
     @State private var password: String = ""
-    @Binding var isActive: Bool
+    @Binding var isLogged: Bool
     var body: some View {
         NavigationStack{
             ScrollView{
@@ -81,7 +81,9 @@ struct LoginView: View {
                     
                     Button{
                         if userVM.validation(_username: username, _password: password){
-                            isActive = true
+                            isLogged = true
+                            username = ""
+                            password = ""
                         }
                     }label: {
                         HStack{
@@ -114,7 +116,7 @@ struct LoginView: View {
                         .padding()
                         .foregroundStyle(.white)
                 }.padding(.bottom,30)
-            }.background(Color.white).foregroundStyle(.gray)
+            }.foregroundStyle(.gray)
         }
         
     }

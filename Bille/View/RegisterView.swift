@@ -147,7 +147,7 @@ struct RegisterView: View {
                 HStack{
                     Spacer()
                     NavigationLink{
-                        LoginView(isActive: $isActive).navigationBarBackButtonHidden(true)
+                        LoginView(isLogged: $isActive).navigationBarBackButtonHidden(true)
                     }label: {
                         Text("Have account?, Sign In!")
                             .foregroundStyle(.gray)
@@ -157,9 +157,7 @@ struct RegisterView: View {
                 VStack{
                     
                     Button{
-                        if userVM.validation(_username: username, _password: password){
-                            isActive = true
-                        }
+                        userVM.register()
                     }label: {
                         HStack{
                             Text("Register now!").bold()
