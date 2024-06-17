@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct LoginView: View {
-    @Environment(UserVM.self) private var userVM
+    @Environment(\.dismiss.self) var dismiss
+    @Environment(UserVM.self) var userVM
     @State private var username: String = ""
     @State private var password: String = ""
-    @State private var isActive: Bool = false
+    @Binding var isActive: Bool
     var body: some View {
         NavigationStack{
             ScrollView{
@@ -95,20 +96,9 @@ struct LoginView: View {
                         .clipShape(.rect(cornerRadius: 10))
                         .padding()
                         .foregroundStyle(.white)
-                        
-                        
-                        
                     }.disabled(username == "" || password == "")
                     
                 }
-                
-                .navigationDestination(
-                    isPresented: $isActive,
-                    destination:{
-                        ContentView()
-                            .navigationBarBackButtonHidden(true)
-                            .environment(userVM)
-                    })
                 
                 Text("---------------------or--------------------")
                 
@@ -125,12 +115,9 @@ struct LoginView: View {
                         .foregroundStyle(.white)
                 }.padding(.bottom,30)
             }.background(Color.white).foregroundStyle(.gray)
-        }.background(.ultraThickMaterial)
+        }
         
     }
     
 }
 
-#Preview {
-    LoginView().environment(UserVM())
-}

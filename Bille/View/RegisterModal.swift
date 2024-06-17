@@ -8,26 +8,27 @@
 import SwiftUI
 
 struct RegisterModal: View {
-    @State private var pulsate:Bool = false
-    @State private var isPresented:Bool = false
+    @State private var pulsate: Bool = false
+    @State private var isPresented: Bool = false
     @Environment(UserVM.self) private var userVM
-    @Environment(\.dismiss.self) private var dismiss
-    @State private var isLogged:Bool = false
+    @Environment(\.dismiss.self) var dismiss
+    @State private var isLogged: Bool = false
+    
     var body: some View {
-        ZStack{
-            Button{
+        ZStack {
+            Button {
                 isPresented.toggle()
-            }label: {
+            } label: {
                 Image("walletRegister")
                     .resizable()
                     .scaledToFill()
                     .ignoresSafeArea()
             }
             
-            VStack{
+            VStack {
                 Image(systemName: "creditcard.fill")
                     .resizable()
-                    .foregroundStyle(pulsate ? .purple.opacity(1) : .purple.opacity(0.4) )
+                    .foregroundStyle(pulsate ? .purple.opacity(1) : .purple.opacity(0.4))
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 50)
                     .foregroundColor(.blue)
@@ -49,15 +50,23 @@ struct RegisterModal: View {
                     .fontWeight(.heavy)
                     .shadow(color: .purple, radius: 8)
                     .underline()
-                    .padding(.top,20)
+                    .padding(.top, 20)
                 
                 Spacer()
             }
-            
         }
-        .sheet(isPresented: $isPresented, content: {
-            LoginView().environment(userVM)
-        })
+        .fullScreenCover(isPresented: $isLogged) {
+            ContentView()
+        }
+        .sheet(isPresented: $isPresented,onDismiss: {
+            if isLogged{
+                dismiss()
+            }
+        }) {
+            LoginView(isActive: $isLogged)
+                .environment(userVM)
+                .presentationCornerRadius(24)
+        }
     }
 }
 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @Environment(UserVM.self) private var userVM
+    @Environment(UserVM.self) var userVM
     @State var name:String = ""
     @State var lastname:String = ""
     @State var birthday:String = ""
@@ -147,7 +147,7 @@ struct RegisterView: View {
                 HStack{
                     Spacer()
                     NavigationLink{
-                        LoginView().navigationBarBackButtonHidden(true)
+                        LoginView(isActive: $isActive).navigationBarBackButtonHidden(true)
                     }label: {
                         Text("Have account?, Sign In!")
                             .foregroundStyle(.gray)
@@ -180,13 +180,6 @@ struct RegisterView: View {
                     
                 }
                 .padding(.bottom,30)
-                
-                .navigationDestination(
-                    isPresented: $isActive,
-                    destination:{
-                        ContentView()
-                            .navigationBarBackButtonHidden(true)
-                    })
             }.background(Color.white).foregroundStyle(.gray)
         }
         
