@@ -37,5 +37,13 @@ class CurrencyVM{
         
     }
     
+    func dolarValue() -> Double {
+        if let dolarCurrency = currencyList.first(where: { $0.name == "US Dollar" }) {
+            return dolarCurrency.value
+        } else {            
+            return 0
+        }
+    }
+    
     
 }

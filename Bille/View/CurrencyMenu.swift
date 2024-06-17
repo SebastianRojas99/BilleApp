@@ -35,7 +35,7 @@ struct CurrencyMenu: View {
                                                 .foregroundStyle(.gray)
                                             
                                             
-                                            Text("\(item.value)")
+                                            Text("\(item.value / currencyVM.dolarValue())")
                                                 .bold()
                                         }.padding()
                                         
