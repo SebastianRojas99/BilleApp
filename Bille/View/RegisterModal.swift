@@ -16,15 +16,17 @@ struct RegisterModal: View {
     
     var body: some View {
         ZStack {
-            Image("walletRegister")
-                .resizable()
-                .scaledToFill()
-                .ignoresSafeArea()
+            Button {
+                isPresented = true
+            } label: {
+                Image("walletRegister")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea()
+            }
             
             VStack {
-                Button {
-                    isPresented = true
-                } label: {
+
                     Image(systemName: "creditcard.fill")
                         .resizable()
                         .foregroundStyle(pulsate ? .purple.opacity(1) : .purple.opacity(0.4))
@@ -41,7 +43,6 @@ struct RegisterModal: View {
                                 self.pulsate = true
                             }
                         }
-                }
                 
                 Text("Welcome to Bille")
                     .font(.system(size: 36))
@@ -66,7 +67,7 @@ struct RegisterModal: View {
                     .presentationDetents([.medium])
             }
             .fullScreenCover(isPresented: $showContentView) {
-                ContentView()
+                HomeScreen()
             }
         }
         .onChange(of: isLogged) {

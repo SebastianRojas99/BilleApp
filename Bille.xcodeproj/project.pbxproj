@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		962269762C1E72F100655D4B /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962269752C1E72F100655D4B /* UserCredentials.swift */; };
 		962269782C1E76B900655D4B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962269772C1E76B900655D4B /* LoginView.swift */; };
+		96556FBD2C1FEEB9003A5C05 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96556FBC2C1FEEB9003A5C05 /* HomeScreen.swift */; };
 		96B339A52C1D306800B910A5 /* BilleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B339A42C1D306800B910A5 /* BilleApp.swift */; };
 		96B339A72C1D306800B910A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B339A62C1D306800B910A5 /* ContentView.swift */; };
 		96B339A92C1D306900B910A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B339A82C1D306900B910A5 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		962269752C1E72F100655D4B /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
 		962269772C1E76B900655D4B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		96556FBC2C1FEEB9003A5C05 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		96B339A12C1D306800B910A5 /* Bille.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bille.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B339A42C1D306800B910A5 /* BilleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilleApp.swift; sourceTree = "<group>"; };
 		96B339A62C1D306800B910A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				96B339A62C1D306800B910A5 /* ContentView.swift */,
 				96B339BC2C1D49CA00B910A5 /* RegisterView.swift */,
 				962269772C1E76B900655D4B /* LoginView.swift */,
+				96556FBC2C1FEEB9003A5C05 /* HomeScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				96B339BD2C1D49CA00B910A5 /* RegisterView.swift in Sources */,
 				96B339A72C1D306800B910A5 /* ContentView.swift in Sources */,
 				96B339A52C1D306800B910A5 /* BilleApp.swift in Sources */,
+				96556FBD2C1FEEB9003A5C05 /* HomeScreen.swift in Sources */,
 				962269762C1E72F100655D4B /* UserCredentials.swift in Sources */,
 				962269782C1E76B900655D4B /* LoginView.swift in Sources */,
 				96B339B92C1D34EE00B910A5 /* User.swift in Sources */,
