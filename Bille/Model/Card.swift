@@ -7,12 +7,11 @@
 
 import Foundation
 
-struct Card:Hashable,Codable,Identifiable{
-    
-    var id:UUID = .init()
-    var name:String
-    var number:String
-    var date:Date
-    var cvv: Int
-    var credit: Float
+struct Card: Hashable, Codable, Identifiable {
+    var id: UUID = UUID()
+    var name: String
+    var number: String
+    var expiryDate: String 
+    var cvv: String
+    var credit: Double
 }

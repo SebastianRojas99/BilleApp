@@ -15,6 +15,13 @@ struct User:Hashable,Codable,Identifiable{
     var address:String
     var birthday:Date
     var password:String
+    var cards:[Card]
     
-    var state:Int
+    var state:UserState
+}
+
+enum UserState: Int, Codable {
+    case active = 1
+    case inactive = 2
+    case banned = 3
 }
