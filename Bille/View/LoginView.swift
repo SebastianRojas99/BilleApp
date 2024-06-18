@@ -44,6 +44,7 @@ struct LoginView: View {
                             .padding()
                             .background(.pink)
                             .clipShape(.rect(cornerRadius: 10))
+                            
                     }
                     
                     
@@ -117,7 +118,7 @@ struct LoginView: View {
                         .foregroundStyle(.white)
                 }.padding(.bottom,30)
             }.foregroundStyle(.gray)
-        }
+        }.environment(userVM)
         
     }
     

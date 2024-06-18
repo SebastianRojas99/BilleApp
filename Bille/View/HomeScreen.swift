@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    @Environment(UserVM.self) private var userVM
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     var body: some View {
         NavigationStack {
@@ -21,7 +22,7 @@ struct HomeScreen: View {
                     Spacer()
                     
                     VStack(alignment: .leading) {
-                        Text("Welcome")
+                        Text("Welcome \(userVM.getUser()?.capitalized ?? "Invitado")!")
                             .foregroundColor(.gray)
                         Text("Dashboard")
                             .font(.largeTitle)
@@ -50,9 +51,10 @@ struct HomeScreen: View {
                 Spacer()
             }            
             .padding()
+            .environment(userVM)
         }
     }
 }
 #Preview {
-    HomeScreen()
+    HomeScreen().environment(UserVM())
 }

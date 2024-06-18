@@ -11,6 +11,7 @@ struct User:Hashable,Codable,Identifiable{
     var id: UUID = .init()
     var name:String
     var lastname:String
+    var username:String
     var email:String
     var address:String
     var birthday:Date

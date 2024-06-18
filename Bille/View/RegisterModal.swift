@@ -67,7 +67,7 @@ struct RegisterModal: View {
                     .presentationDetents([.medium])
             }
             .fullScreenCover(isPresented: $showContentView) {
-                HomeScreen()
+                HomeScreen().environment(userVM)
             }
         }
         .onChange(of: isLogged) {
