@@ -8,10 +8,11 @@
 import Foundation
 
 var testFlightCredentials: [String: String] = [
-    "seba": "123",
-    "apple-man": "123",
-    "santi":"123",
-    "cande":"123",
-    "alva":"123",
-    "juli":"123"
+    "Sebarojas@example.com": "123",
+    "apple-man@example.com": "123",
+    "santi@example.com":"123",
+    "cande@example.com":"123",
+    "alva@example.com":"123",
+    "juli@example.com":"123"
 ]
+

@@ -80,7 +80,7 @@ struct LoginView: View {
                 VStack{
                     
                     Button{
-                        if userVM.validation(_username: username, _password: password){
+                        if userVM.validation(username, password){
                             isLogged = true
                             username = ""
                             password = ""

@@ -11,18 +11,17 @@ import Observation
 
 @Observable
 class UserVM{
-    var username:String?
-    var password:String?
     
     var userList: [User] = []
     
-    func validation(_username:String,_password:String)->Bool{
-                if let storedPassword = testFlightCredentials[_username], storedPassword == _password {
-                    self.username = _username
-                    return true
-                }
-                return false
-            }
+    func validation(_ email: String, _ password: String) -> Bool {
+        // Buscar usuario en la lista de usuarios
+        if users.first(where: { $0.email == email && $0.password == password }) != nil {            
+            return true
+        }
+        // Usuario no encontrado o contraseña no coincide
+        return false
+    }
     func register(){
         
     }
