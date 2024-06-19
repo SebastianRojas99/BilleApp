@@ -27,13 +27,21 @@ struct HomeScreen: View {
                         Text("Dashboard")
                             .font(.largeTitle)
                             .bold()
-                        Button{
-                            isDarkMode.toggle()
-                        }label: {
-                            Image(systemName: isDarkMode ? "moon.stars" : "sun.max.fill")
-                                .font(.largeTitle)
-                                .foregroundStyle(isDarkMode ? .brown.opacity(0.7) : .yellow)
+                        HStack{
+                            Button{
+                                isDarkMode.toggle()
+                            }label: {
+                                Image(systemName: isDarkMode ? "moon.stars" : "sun.max.fill")
+                                    .font(.largeTitle)
+                                    .foregroundStyle(isDarkMode ? .brown.opacity(0.7) : .yellow)
+                            }
+                            NavigationLink{
+                                CreditCards().environment(userVM)
+                            }label: {
+                                Text("go to my card")
+                            }
                         }
+                        
                     }
                     
                     Spacer()

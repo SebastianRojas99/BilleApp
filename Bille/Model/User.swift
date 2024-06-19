@@ -18,6 +18,7 @@ struct User:Hashable,Codable,Identifiable{
     var password:String
     var cards:[Card]
     
+    var role:Role
     var state:UserState
 }
 
@@ -25,4 +26,10 @@ enum UserState: Int, Codable {
     case active = 1
     case inactive = 2
     case banned = 3
+}
+
+enum Role: Int, Codable {
+    case user = 1
+    case admin = 2
+    case customer = 3
 }
