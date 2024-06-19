@@ -11,12 +11,22 @@ struct CreditCards: View {
     @Environment(UserVM.self) private var userVM
     @State private var isShow:Bool = false
     var body: some View {
-        VStack{
-            Button{
-                isShow.toggle()
-            }label: {
-                Text("show")
-            }.buttonStyle(.borderedProminent)
+        VStack(alignment:.leading){
+            HStack{
+                Text("My Cards")
+                    .font(.largeTitle)
+                    .bold()
+                    .frame(alignment: .leading)
+                    
+                
+                Button{
+                    isShow.toggle()
+                }label: {
+                    Text("show")
+                }.buttonStyle(.borderedProminent).padding(.horizontal)
+            }.padding(.top,12)
+            
+            
             ForEach(userVM.userCards, id: \.self){item in
                                 
                         VStack(alignment: .leading) {
@@ -59,6 +69,7 @@ struct CreditCards: View {
                         .background(item.typeCard == "Visa" ? LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .topLeading, endPoint: .bottomTrailing): LinearGradient(gradient: Gradient(colors: [Color.yellow, Color.red]), startPoint: .topLeading, endPoint: .bottomTrailing))
                         .cornerRadius(15)
                         .shadow(radius: 10)
+                        .padding(.top,10)
             }
         }
     }

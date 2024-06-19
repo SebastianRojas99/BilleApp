@@ -12,14 +12,14 @@ struct HomeScreen: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(alignment:.leading){
                 VStack(alignment: .leading) {
                     Text("Bille")
                         .font(.title)
                         .bold()
                         .frame(alignment: .leading)
-                    
-                    Spacer()
+                        .padding()
+                                        
                     
                     VStack(alignment: .leading) {
                         Text("Welcome \(userVM.getUser()?.capitalized ?? "Invitado")!")
@@ -40,15 +40,14 @@ struct HomeScreen: View {
                             }label: {
                                 Text("go to my card")
                             }
-                        }
+                        }.padding(.top,2)
                         
-                    }
+                    }.padding()
                     
                     Spacer()
-                }
-                .padding()
+                }.padding()
                 
-                VStack(alignment: .center) {
+                VStack(alignment: .leading) {
                     CurrencyMenu()
                         .frame(height: 350)
                         .cornerRadius(15)
