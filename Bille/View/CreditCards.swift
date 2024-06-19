@@ -71,7 +71,7 @@ struct CreditCards: View {
                         .shadow(radius: 10)
                         .padding(.top,10)
             }
-        }
+        }.frame(maxWidth:.infinity,maxHeight:.infinity)
     }
 }
 
