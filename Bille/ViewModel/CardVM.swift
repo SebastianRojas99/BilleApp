@@ -11,12 +11,11 @@ import Observation
 @Observable
 class CardVM{
     
+    var users:[User] = []
     
-    
-    func addCard(card:Card){
-        
-        _ = Card(name: card.name, typeCard: card.typeCard, number: card.number, expiryDate: card.expiryDate, cvv: card.cvv, credit: card.credit)
-        
-                                
-    }
+    func addCard(to user: User, card: Card) {
+        if let index = users.firstIndex(where: { $0.username == user.username }) {
+                users[index].cards.append(card)
+            }
+        }
 }
