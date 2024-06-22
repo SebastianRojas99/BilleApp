@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeScreen: View {
     @Environment(UserVM.self) private var userVM
+    @Environment(CardVM.self) private var cardVM
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     var body: some View {
         NavigationStack {
@@ -50,6 +51,7 @@ struct HomeScreen: View {
                     
                     VStack(alignment: .leading) {
                         CreditCards()
+                            .environment(cardVM)
                             .frame(height: 350)
                             .cornerRadius(15)
                             .padding() // Añade padding aquí
@@ -74,6 +76,4 @@ struct HomeScreen: View {
         }
     }
 }
-#Preview {
-    HomeScreen().environment(UserVM())
-}
+

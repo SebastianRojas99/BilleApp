@@ -11,6 +11,7 @@ struct RegisterModal: View {
     @State private var pulsate: Bool = false
     @State private var isPresented: Bool = false
     @Environment(UserVM.self) private var userVM
+    @Environment(CardVM.self) private var cardVM
     @State private var isLogged: Bool = false
     @State private var showContentView: Bool = false
     
@@ -62,6 +63,7 @@ struct RegisterModal: View {
             }) {
                 LoginView(isLogged: $isLogged)
                     .environment(userVM)
+                    .environment(cardVM)
                     .presentationCornerRadius(24)
                     .presentationBackground(.ultraThinMaterial)
                     .presentationDetents([.medium])
@@ -79,5 +81,5 @@ struct RegisterModal: View {
 }
 
 #Preview {
-    RegisterModal().environment(UserVM())
+    RegisterModal().environment(UserVM()).environment(CardVM(userVM: UserVM()))
 }

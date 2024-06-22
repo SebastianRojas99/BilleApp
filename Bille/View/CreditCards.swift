@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CreditCards: View {
     @Environment(UserVM.self) private var userVM
+    @Environment(CardVM.self) private var cardVM
     @State private var isShow:Bool = false
     var body: some View {
         VStack(alignment:.leading){
@@ -23,6 +24,13 @@ struct CreditCards: View {
                     isShow.toggle()
                 }label: {
                     Text("show")
+                }.buttonStyle(.borderedProminent).padding(.horizontal)
+                
+                NavigationLink{
+                    NewCardModal()
+                        .environment(cardVM)
+                }label: {
+                    Image(systemName: "plus")
                 }.buttonStyle(.borderedProminent).padding(.horizontal)
             }.padding(.top,12)
             
@@ -75,6 +83,3 @@ struct CreditCards: View {
     }
 }
 
-#Preview {
-    CreditCards().environment(UserVM())
-}

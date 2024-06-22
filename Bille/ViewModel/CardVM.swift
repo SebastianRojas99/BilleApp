@@ -11,11 +11,17 @@ import Observation
 @Observable
 class CardVM{
     
-    var users:[User] = []
+   var userVM:UserVM
     
-    func addCard(to user: User, card: Card) {
-        if let index = users.firstIndex(where: { $0.username == user.username }) {
-                users[index].cards.append(card)
-            }
+    init(userVM: UserVM) {
+        self.userVM = userVM
+    }
+    
+    func addCardToUser(card: Card, email: String) {
+        if let index = userVM.userList.firstIndex(where: { $0.username == email || $0.email == email }) {
+            userVM.userList[index].cards.append(card)
+        } else {
+            print("Error: Usuario no encontrado")
         }
+    }
 }
