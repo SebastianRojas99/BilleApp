@@ -28,6 +28,7 @@
 		96B339BD2C1D49CA00B910A5 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B339BC2C1D49CA00B910A5 /* RegisterView.swift */; };
 		96B339BF2C1D4A3A00B910A5 /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B339BE2C1D4A3A00B910A5 /* UserVM.swift */; };
 		96C367692C210FDC00988460 /* CurrencyMenuTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C367682C210FDC00988460 /* CurrencyMenuTest.swift */; };
+		96C824A42C275E8B009A62F7 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C824A32C275E8B009A62F7 /* Services.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		96B339BC2C1D49CA00B910A5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		96B339BE2C1D4A3A00B910A5 /* UserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
 		96C367682C210FDC00988460 /* CurrencyMenuTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyMenuTest.swift; sourceTree = "<group>"; };
+		96C824A32C275E8B009A62F7 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				96B339B82C1D34EE00B910A5 /* User.swift */,
 				966462ED2C2092F60010C414 /* Currency.swift */,
 				967E41B42C21B696000043FE /* Card.swift */,
+				96C824A32C275E8B009A62F7 /* Services.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				96B339BF2C1D4A3A00B910A5 /* UserVM.swift in Sources */,
 				96B339BD2C1D49CA00B910A5 /* RegisterView.swift in Sources */,
 				96B339A72C1D306800B910A5 /* ContentView.swift in Sources */,
+				96C824A42C275E8B009A62F7 /* Services.swift in Sources */,
 				961F2F4D2C21E0A000D83602 /* CreditCardTest.swift in Sources */,
 				96B339A52C1D306800B910A5 /* BilleApp.swift in Sources */,
 				966462EE2C2092F60010C414 /* Currency.swift in Sources */,
