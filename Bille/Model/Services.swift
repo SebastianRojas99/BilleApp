@@ -8,5 +8,9 @@
 import Foundation
 
 struct Services:Hashable,Codable{
+    var name: String
+    var provider: String
+    var description: String
+    var price: Double
     
 }
