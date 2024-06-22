@@ -81,5 +81,5 @@ struct RegisterModal: View {
 }
 
 #Preview {
-    RegisterModal().environment(UserVM()).environment(CardVM(userVM: UserVM()))
+    RegisterModal().environment(UserVM()).environment(CardVM())
 }

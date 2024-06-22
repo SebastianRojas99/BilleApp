@@ -13,9 +13,7 @@ struct NewCardModal: View {
     @State private var expiryDate: String = ""
     @State private var cvv: String = ""
     @State private var cardType: String = ""
-    @Environment(CardVM.self) private var cardVM
     @Environment(UserVM.self) private var userVM
-    
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
@@ -56,8 +54,13 @@ struct NewCardModal: View {
                 .padding(.bottom, 10)
             
             Button(action: {
-                let newCard = Card(name: cardHolderName, typeCard: cardType, number: cardNumber, expiryDate: expiryDate, cvv: cvv, credit: 0.0)
-                cardVM.addCardToUser(card: newCard, email: userVM.username ?? "")
+                let newCard = Card(name: cardHolderName, typeCard: cardType, number: cardNumber, expiryDate: expiryDate, cvv: cvv, credit: 1000000.0)
+                userVM.addCard(newCard, userVM.username ?? "")
+                cardHolderName = ""
+                cardType = ""
+                cardNumber = ""
+                expiryDate = ""
+                cvv = ""
             }) {
                 Text("Add Card")
                     .bold()

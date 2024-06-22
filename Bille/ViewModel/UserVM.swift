@@ -44,5 +44,13 @@ class UserVM{
     func getUser() -> String?{
             return username
         }
+    
+    func addCard(_ card:Card,_ username:String){
+        if users.first(where: {($0.username == username || $0.email == username)}) != nil{
+            userCards.append(card)
+        }else{
+            print("error de tarjetas")
+        }
+    }
 }
 

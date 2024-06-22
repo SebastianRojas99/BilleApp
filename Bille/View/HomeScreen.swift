@@ -51,7 +51,7 @@ struct HomeScreen: View {
                     
                     VStack(alignment: .leading) {
                         CreditCards()
-                            .environment(cardVM)
+                            .environment(userVM)
                             .frame(height: 350)
                             .cornerRadius(15)
                             .padding() // Añade padding aquí

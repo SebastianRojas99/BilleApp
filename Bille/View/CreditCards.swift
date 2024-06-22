@@ -29,6 +29,7 @@ struct CreditCards: View {
                 NavigationLink{
                     NewCardModal()
                         .environment(cardVM)
+                        .environment(userVM)
                 }label: {
                     Image(systemName: "plus")
                 }.buttonStyle(.borderedProminent).padding(.horizontal)

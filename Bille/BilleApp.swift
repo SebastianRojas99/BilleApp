@@ -10,9 +10,10 @@ import SwiftUI
 @main
 struct BilleApp: App {
     @State var userVM = UserVM()
+    @State var cardVM = CardVM()
     var body: some Scene {
         WindowGroup {
-            RegisterModal().environment(userVM).environment(CardVM(userVM: userVM))
+            RegisterModal().environment(userVM).environment(cardVM)
         }
     }
 }
