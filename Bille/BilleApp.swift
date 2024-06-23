@@ -9,11 +9,17 @@ import SwiftUI
 
 @main
 struct BilleApp: App {
+    @AppStorage("hasSeenOnboarding") var hasSeenOnboarding: Bool = false
     @State var userVM = UserVM()
     @State var cardVM = CardVM()
+    
     var body: some Scene {
         WindowGroup {
-            RegisterModal().environment(userVM).environment(cardVM)
+            if hasSeenOnboarding {
+                RegisterModal().environment(userVM).environment(cardVM)
+            } else {
+                OnBoardingView(hasSeenOnboarding: $hasSeenOnboarding)
+            }
         }
     }
 }
