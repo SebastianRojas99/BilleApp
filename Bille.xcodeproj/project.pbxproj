@@ -12,6 +12,7 @@
 		961F2F4F2C2258F100D83602 /* CreditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961F2F4E2C2258F100D83602 /* CreditCards.swift */; };
 		962269762C1E72F100655D4B /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962269752C1E72F100655D4B /* UserCredentials.swift */; };
 		962269782C1E76B900655D4B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962269772C1E76B900655D4B /* LoginView.swift */; };
+		962B36DB2C2A1C5400648C37 /* ServicesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B36DA2C2A1C5400648C37 /* ServicesVM.swift */; };
 		96556FBD2C1FEEB9003A5C05 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96556FBC2C1FEEB9003A5C05 /* HomeScreen.swift */; };
 		966462EE2C2092F60010C414 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966462ED2C2092F60010C414 /* Currency.swift */; };
 		966462F02C2095E80010C414 /* CurrencyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966462EF2C2095E80010C414 /* CurrencyVM.swift */; };
@@ -38,6 +39,7 @@
 		961F2F4E2C2258F100D83602 /* CreditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCards.swift; sourceTree = "<group>"; };
 		962269752C1E72F100655D4B /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
 		962269772C1E76B900655D4B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		962B36DA2C2A1C5400648C37 /* ServicesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesVM.swift; sourceTree = "<group>"; };
 		96556FBC2C1FEEB9003A5C05 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		966462ED2C2092F60010C414 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		966462EF2C2095E80010C414 /* CurrencyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyVM.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				96B339BE2C1D4A3A00B910A5 /* UserVM.swift */,
 				966462EF2C2095E80010C414 /* CurrencyVM.swift */,
 				96AAB7672C2477E0004DD26E /* CardVM.swift */,
+				962B36DA2C2A1C5400648C37 /* ServicesVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				96C367692C210FDC00988460 /* CurrencyMenuTest.swift in Sources */,
 				962269782C1E76B900655D4B /* LoginView.swift in Sources */,
 				967E41B72C21C650000043FE /* DatabaseHardcoded.swift in Sources */,
+				962B36DB2C2A1C5400648C37 /* ServicesVM.swift in Sources */,
 				961F2F4F2C2258F100D83602 /* CreditCards.swift in Sources */,
 				966AA86A2C247FB30045871E /* NewCardModal.swift in Sources */,
 				96B339B92C1D34EE00B910A5 /* User.swift in Sources */,
