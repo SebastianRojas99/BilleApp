@@ -17,7 +17,7 @@ class ServicesVM{
     func get(){
         
     }
-    func add(){
+    func create(){
         
     }
     func update(){

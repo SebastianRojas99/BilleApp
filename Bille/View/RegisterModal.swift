@@ -61,7 +61,7 @@ struct RegisterModal: View {
                     showContentView = true
                 }
             }) {
-                LoginView(isLogged: $isLogged)
+                 LoginView(isLogged: $isLogged)
                     .environment(userVM)
                     .environment(cardVM)
                     .presentationCornerRadius(24)

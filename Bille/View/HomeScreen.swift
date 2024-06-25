@@ -49,13 +49,13 @@ struct HomeScreen: View {
                     
                     
                     
-                    VStack(alignment: .leading) {
-                        CreditCards()
-                            .environment(userVM)
-                            .frame(height: 350)
-                            .cornerRadius(15)
-                            .padding() // Añade padding aquí
-                            .preferredColorScheme(isDarkMode ? .dark : .light)
+                    VStack(alignment: .leading) {                        
+                            CreditCards()
+                                .environment(userVM)
+                                .frame(height: 350)
+                                .cornerRadius(15)
+                                .padding() // Añade padding aquí
+                                .preferredColorScheme(isDarkMode ? .dark : .light)
                     }.padding() // Y también aquí
                     
                     
