@@ -16,7 +16,7 @@ struct CreditCards: View {
         VStack(alignment: .leading) {
             HStack {
                 Text("My Cards")
-                    .font(.largeTitle)
+                    .font(.title2)
                     .bold()
                     .frame(alignment: .leading)
                 
@@ -24,7 +24,7 @@ struct CreditCards: View {
                     isShow.toggle()
                 } label: {
                     Text("show")
-                }.buttonStyle(.borderedProminent).padding(.horizontal)
+                }.buttonStyle(.borderedProminent).padding(.horizontal,5)
                 
                 NavigationLink {
                     NewCardModal()

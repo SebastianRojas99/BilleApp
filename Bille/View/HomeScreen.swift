@@ -45,27 +45,29 @@ struct HomeScreen: View {
                             }.padding(.top,2)
                             
                         }.padding()
+                        VStack(alignment: .leading) {
+                                CreditCards()
+                                    .environment(userVM)
+                                    .frame(height: 350)
+                                    .cornerRadius(15)
+                                    .padding() // Añade padding aquí
+                                    .preferredColorScheme(isDarkMode ? .dark : .light)
+                        }.padding() // Y también aquí
+                        VStack(alignment: .leading) {
+                            CurrencyMenu()
+                                .frame(height: 350)
+                                .cornerRadius(15)
+                                .padding()
+                                .preferredColorScheme(isDarkMode ? .dark : .light)
+                        }
+                        
                     }.padding()
                     
                     
                     
-                    VStack(alignment: .leading) {                        
-                            CreditCards()
-                                .environment(userVM)
-                                .frame(height: 350)
-                                .cornerRadius(15)
-                                .padding() // Añade padding aquí
-                                .preferredColorScheme(isDarkMode ? .dark : .light)
-                    }.padding() // Y también aquí
                     
                     
-                    VStack(alignment: .leading) {
-                        CurrencyMenu()
-                            .frame(height: 350)
-                            .cornerRadius(15)
-                            .padding()
-                            .preferredColorScheme(isDarkMode ? .dark : .light)
-                    }
+                    
                     
                     Spacer()
                 }
