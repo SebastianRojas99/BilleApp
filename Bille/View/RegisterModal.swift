@@ -30,7 +30,7 @@ struct RegisterModal: View {
 
                     Image(systemName: "creditcard.fill")
                         .resizable()
-                        .foregroundStyle(pulsate ? .purple.opacity(1) : .purple.opacity(0.4))
+                        .foregroundStyle(pulsate ? .purple.opacity(1) : .purple.opacity(0.3))
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 50)
                         .foregroundColor(.blue)
