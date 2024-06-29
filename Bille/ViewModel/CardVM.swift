@@ -12,6 +12,8 @@ import Observation
 class CardVM{
     
     
-    
+    func delete(card:Card){
+        
+    }
     
 }
