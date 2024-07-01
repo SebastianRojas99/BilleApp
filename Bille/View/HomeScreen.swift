@@ -33,7 +33,7 @@ struct HomeScreen: View {
                                 Button{
                                     isDarkMode.toggle()
                                 }label: {
-                                    Image(systemName: isDarkMode ? "moon.stars" : "sun.max.fill")
+                                    Image(systemName: isDarkMode ? "moon.stars" : "sun.max")
                                         .font(.largeTitle)
                                         .foregroundStyle(isDarkMode ? .brown.opacity(0.7) : .yellow)
                                 }
