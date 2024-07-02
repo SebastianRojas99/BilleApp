@@ -51,7 +51,6 @@ struct RegisterModal: View {
                     .bold()
                     .fontWeight(.heavy)
                     .shadow(color: .purple, radius: 8)
-                    .underline()
                     .padding(.top, 20)
                 
                 Spacer()
