@@ -13,6 +13,7 @@ import Observation
 class UserVM{
     
     var username:String?
+    var amount:Int?
     var userList: [User] = []
     var userCards:[Card] = []
     
@@ -24,6 +25,7 @@ class UserVM{
             
             username = email            
             getCards(email)
+            getAmount(email)
             return true
         }
         // Usuario no encontrado o contraseña no coincide
@@ -32,11 +34,20 @@ class UserVM{
     func register(){
         
     }
+    
     func getCards(_ email:String){
        if let users =  users.first(where: {($0.username == email || $0.email == email)}){
            userCards = users.cards
        }else{
            print("error de tarjetas")
+       }
+           
+    }
+    func getAmount(_ email:String){
+       if let users =  users.first(where: {($0.username == email || $0.email == email)}){
+           amount = users.accountAmount
+       }else{
+           print("error de monto")
        }
            
     }

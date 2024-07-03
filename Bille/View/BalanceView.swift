@@ -8,11 +8,54 @@
 import SwiftUI
 
 struct BalanceView: View {
+    @Environment(UserVM.self) private var userVM
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment:.center){
+            Text("Total balance")
+                .font(.callout)
+                .foregroundStyle(.gray)
+                .frame(alignment: .center)
+                            
+            Text("$\(userVM.amount ?? 0)")
+                .font(.system(size:50))
+                .bold()
+                .frame(alignment: .center)
+                .padding(.bottom,5)
+            
+            HStack{
+                Button {
+                        } label: {
+                            Text("Transfer")
+                                .font(.title)
+                                .foregroundStyle(.white)
+                                .padding(.horizontal,12)
+                                .frame(width: 140, height: 45)
+                                .background(.green)
+                                .clipShape(Capsule())
+                                .shadow(radius: 10)
+                        }
+                Button {
+                        } label: {
+                            HStack{
+                                Image(systemName: "arrow.down")
+                                Text("Income")
+                                    .font(.title)
+                                    .foregroundStyle(.white)
+                                    .padding(.horizontal,12)
+                                    .frame(width: 140, height: 45)
+                                    .background(.pink)
+                                    .clipShape(Capsule())
+                                    .shadow(radius: 10)
+                            }
+                            
+                        }
+            }
+            
+            
+        }.padding(.top,10)
     }
 }
 
 #Preview {
-    BalanceView()
+    BalanceView().environment(UserVM())
 }

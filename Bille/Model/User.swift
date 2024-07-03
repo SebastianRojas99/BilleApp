@@ -16,6 +16,7 @@ struct User:Hashable,Codable,Identifiable{
     var address:String
     var birthday:Date
     var password:String
+    var accountAmount:Int
     var cards:[Card]
     var services:[Services]
     

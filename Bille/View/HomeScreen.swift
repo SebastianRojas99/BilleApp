@@ -11,17 +11,12 @@ struct HomeScreen: View {
     @Environment(UserVM.self) private var userVM
     @Environment(CardVM.self) private var cardVM
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+    
     var body: some View {
         NavigationStack {
-            ScrollView{
-                VStack(alignment:.leading){
+            ScrollView {
+                VStack {
                     VStack(alignment: .leading) {
-                        Text("Bille")
-                            .font(.title)
-                            .bold()
-                            .frame(alignment: .leading)
-                            .padding()
-                                            
                         
                         VStack(alignment: .leading) {
                             Text("Welcome \(userVM.getUser()?.capitalized ?? "Invitado")!")
@@ -29,30 +24,31 @@ struct HomeScreen: View {
                             Text("Dashboard")
                                 .font(.largeTitle)
                                 .bold()
-                            HStack{
-                                Button{
-                                    isDarkMode.toggle()
-                                }label: {
-                                    Image(systemName: isDarkMode ? "moon.stars" : "sun.max")
-                                        .font(.largeTitle)
-                                        .foregroundStyle(isDarkMode ? .brown.opacity(0.7) : .yellow)
-                                }
-                                NavigationLink{
-                                    CreditCards().environment(userVM)
-                                }label: {
-                                    Text("go to my card")
-                                }
-                            }.padding(.top,2)
-                            
-                        }.padding()
-                        VStack(alignment: .leading) {
-                                CreditCards()
-                                    .environment(userVM)
-                                    .frame(height: 350)
-                                    .cornerRadius(15)
-                                    .padding() // Añade padding aquí
-                                    .preferredColorScheme(isDarkMode ? .dark : .light)
-                        }.padding() // Y también aquí
+                        }
+                        
+                        HStack {
+                            Spacer()
+                            BalanceView().environment(userVM)
+                            Spacer()
+                        }
+                        .frame(alignment: .center)
+                        
+                        HStack {
+                            Button {
+                                isDarkMode.toggle()
+                            } label: {
+                                Image(systemName: isDarkMode ? "moon.stars" : "sun.max")
+                                    .font(.largeTitle)
+                                    .foregroundStyle(isDarkMode ? .brown.opacity(0.7) : .yellow)
+                            }
+                            NavigationLink {
+                                CreditCards().environment(userVM)
+                            } label: {
+                                Text("Go to my card")
+                            }
+                        }
+                        .padding(.top, 2)
+                        
                         VStack(alignment: .leading) {
                             CurrencyMenu()
                                 .frame(height: 350)
@@ -61,21 +57,14 @@ struct HomeScreen: View {
                                 .preferredColorScheme(isDarkMode ? .dark : .light)
                         }
                         
-                    }.padding()
-                    
-                    
-                    
-                    
-                    
-                    
+                    }
+                    .padding()
                     
                     Spacer()
                 }
                 .padding()
                 .environment(userVM)
             }
-            
         }
     }
 }
-
