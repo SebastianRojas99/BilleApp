@@ -17,23 +17,15 @@ struct HomeScreen: View {
             ScrollView {
                 VStack {
                     VStack(alignment: .leading) {
-                        
-                        VStack(alignment: .leading) {
-                            Text("Welcome \(userVM.getUser()?.capitalized ?? "Invitado")!")
-                                .foregroundColor(.gray)
-                            Text("Dashboard")
-                                .font(.largeTitle)
-                                .bold()
-                        }
-                        
-                        HStack {
+                        HStack{
+                            VStack(alignment: .leading) {
+                                Text("Welcome \(userVM.getUser()?.capitalized ?? "Invitado")!")
+                                    .foregroundColor(.gray)
+                                Text("Dashboard")
+                                    .font(.largeTitle)
+                                    .bold()
+                            }
                             Spacer()
-                            BalanceView().environment(userVM)
-                            Spacer()
-                        }
-                        .frame(alignment: .center)
-                        
-                        HStack {
                             Button {
                                 isDarkMode.toggle()
                             } label: {
@@ -44,10 +36,21 @@ struct HomeScreen: View {
                             NavigationLink {
                                 CreditCards().environment(userVM)
                             } label: {
-                                Text("Go to my card")
+                                Image(systemName: "creditcard.fill")
+                                    .font(.largeTitle)
+                                    .foregroundStyle(isDarkMode ? .brown.opacity(0.7) : .yellow)
                             }
                         }
-                        .padding(.top, 2)
+                        
+                        
+                        HStack {
+                            Spacer()
+                            BalanceView().environment(userVM)
+                            Spacer()
+                        }
+                        .frame(alignment: .center)
+                        .padding(.bottom,5)
+                                                
                         
                         VStack(alignment: .leading) {
                             CurrencyMenu()

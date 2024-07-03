@@ -19,34 +19,28 @@ struct CurrencyMenu: View {
                             VStack {
                                 HStack {
                                     Text("\(item.unit)")
-                                        .font(.system(size: 15))
+                                        .font(.system(size: 14))
                                         .padding(.all, 5)
                                         .clipShape(RoundedRectangle(cornerRadius: 10))
-                                        .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 1))
                                         .frame(width: 35, height: 30)
                                         .foregroundColor(.white)
                                         .padding(.all, 10)
                                         .background(Color.red.opacity(0.4))
                                         .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-                                    
                                     VStack(alignment: .leading) {
                                         Text("\(item.name)")
-                                            .font(.title2)
+                                            .font(.caption)
                                             .foregroundColor(.gray)
                                         
-                                        Text("\(item.value / currencyVM.dolarValue())")
-                                            .bold()
+                                        
                                     }
                                     .padding()
                                     
                                     Spacer()
                                     
-                                    Button {
-                                        // going to currency menu
-                                    } label: {
-                                        Image(systemName: "arrow.right")
-                                            .foregroundColor(.red)
-                                    }
+                                    Text("\(item.value / currencyVM.dolarValue())")
+                                        .bold()
+                                        .font(.caption)
                                 }
                             }
                         }
