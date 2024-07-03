@@ -22,37 +22,45 @@ struct BalanceView: View {
                 .frame(alignment: .center)
                 .padding(.bottom,5)
             
-            HStack{
+            HStack {
                 Button {
-                        } label: {
-                            Text("Transfer")
-                                .font(.title)
-                                .foregroundStyle(.white)
-                                .padding(.horizontal,12)
-                                .frame(width: 140, height: 45)
-                                .background(.green)
-                                .clipShape(Capsule())
-                                .shadow(radius: 10)
-                        }
+                    // Acción para el botón de Transfer
+                } label: {
+                    HStack {
+                        Image(systemName: "arrow.right")
+                            .foregroundStyle(.black)
+                        Text("Send")
+                            .font(.title3)
+                            .foregroundStyle(.white)
+                    }
+                    .padding(.horizontal, 12)
+                    .frame(width: 140, height: 45)
+                    .background(Color.green)
+                    .clipShape(Capsule())
+                    .shadow(radius: 10)
+                }
+                
                 Button {
-                        } label: {
-                            HStack{
-                                Image(systemName: "arrow.down")
-                                Text("Income")
-                                    .font(.title)
-                                    .foregroundStyle(.white)
-                                    .padding(.horizontal,12)
-                                    .frame(width: 140, height: 45)
-                                    .background(.pink)
-                                    .clipShape(Capsule())
-                                    .shadow(radius: 10)
-                            }
-                            
-                        }
+                    // Acción para el botón de Income
+                } label: {
+                    HStack {
+                        Image(systemName: "arrow.down")
+                            .foregroundStyle(.black)
+                        Text("Receive")
+                            .font(.title3)
+                            .foregroundStyle(.white)
+                    }
+                    .padding(.horizontal, 12)
+                    .frame(width: 140, height: 45)
+                    .background(Color.pink)
+                    .clipShape(Capsule())
+                    .shadow(radius: 10)
+                }
             }
+            .padding(.top, 5)
             
-            
-        }.padding(.top,10)
+        }
+        .padding(.top, 10)
     }
 }
 
