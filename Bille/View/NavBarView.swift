@@ -11,6 +11,25 @@ struct NavBarView: View {
     var body: some View {
         HStack{
             ScrollView{
+                VStack{
+                    HStack{
+                        NavigationLink{
+                            CreditCards()
+                        }label: {
+                            Image(systemName: "arrow.right")
+                                .foregroundStyle(.black)
+                                .font(.title)
+                        }
+                        NavigationLink{
+                            
+                        }label: {
+                            Image(systemName: "arrow.right")
+                                .foregroundStyle(.black)
+                                .font(.title)
+                        }
+                    }
+                }
+                
                 
             }
         }

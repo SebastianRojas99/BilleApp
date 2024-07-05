@@ -55,6 +55,7 @@ struct HomeScreen: View {
                         VStack(alignment: .leading) {
                             CurrencyMenu()
                                 .frame(height: 350)
+                                .frame(maxWidth: .infinity)
                                 .cornerRadius(15)
                                 .padding()
                                 .preferredColorScheme(isDarkMode ? .dark : .light)
