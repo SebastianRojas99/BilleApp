@@ -15,8 +15,8 @@ struct Category:Identifiable,Codable,Hashable{
 }
 
 var categoryList:[Category] = [
-    Category(icon: "", title: "All"),
-    Category(icon: "figure.run", title: "Running"),
-    Category(icon: "basketball", title: "Basketball"),
-    Category(icon: "figure", title: "StreetWear"),
+    Category(icon: "", title: "Dashboard"),
+    Category(icon: "figure.run", title: "Cards"),
+    Category(icon: "basketball", title: "Services"),
+    Category(icon: "figure", title: "Profile"),
 ]
