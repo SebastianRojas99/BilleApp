@@ -11,5 +11,9 @@ import Observation
 
 @Observable
 class CategoryVM{
+    var categoryList:[Category]
     
+    init(categoryList: [Category]) {
+        self.categoryList = categoryList
+    }
 }

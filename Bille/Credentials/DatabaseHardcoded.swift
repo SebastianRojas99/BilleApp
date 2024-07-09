@@ -48,3 +48,10 @@ var users: [User] = [
         ),
     
 ]
+
+var categoryList:[Category] = [
+    Category(icon: "", title: "Dashboard"),
+    Category(icon: "figure.run", title: "Cards"),
+    Category(icon: "basketball", title: "Services"),
+    Category(icon: "figure", title: "Profile"),
+]

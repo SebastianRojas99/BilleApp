@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		961544682C3A0955000FB9EC /* CategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961544672C3A0955000FB9EC /* CategoryScreen.swift */; };
+		9604EA0D2C3CB04400C6D9C4 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604EA0C2C3CB04400C6D9C4 /* Dashboard.swift */; };
 		961DA92E2C2784FE006E7E97 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961DA92D2C2784FE006E7E97 /* OnBoardingView.swift */; };
 		961F2F4D2C21E0A000D83602 /* CreditCardTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961F2F4C2C21E0A000D83602 /* CreditCardTest.swift */; };
 		961F2F4F2C2258F100D83602 /* CreditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961F2F4E2C2258F100D83602 /* CreditCards.swift */; };
@@ -39,7 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		961544672C3A0955000FB9EC /* CategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreen.swift; sourceTree = "<group>"; };
+		9604EA0C2C3CB04400C6D9C4 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		961DA92D2C2784FE006E7E97 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		961F2F4C2C21E0A000D83602 /* CreditCardTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardTest.swift; sourceTree = "<group>"; };
 		961F2F4E2C2258F100D83602 /* CreditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCards.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 				966AA8692C247FB30045871E /* NewCardModal.swift */,
 				96D1A6592C3607BC00080A64 /* BalanceView.swift */,
 				96D1A65B2C361B2900080A64 /* NavBarView.swift */,
-				961544672C3A0955000FB9EC /* CategoryScreen.swift */,
+				9604EA0C2C3CB04400C6D9C4 /* Dashboard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -290,7 +290,7 @@
 				962269782C1E76B900655D4B /* LoginView.swift in Sources */,
 				967E41B72C21C650000043FE /* DatabaseHardcoded.swift in Sources */,
 				962117562C3B5858000EF67B /* CategoryVM.swift in Sources */,
-				961544682C3A0955000FB9EC /* CategoryScreen.swift in Sources */,
+				9604EA0D2C3CB04400C6D9C4 /* Dashboard.swift in Sources */,
 				962B36DB2C2A1C5400648C37 /* ServicesVM.swift in Sources */,
 				961F2F4F2C2258F100D83602 /* CreditCards.swift in Sources */,
 				966AA86A2C247FB30045871E /* NewCardModal.swift in Sources */,
