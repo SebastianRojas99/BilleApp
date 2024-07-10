@@ -45,7 +45,7 @@ struct HomeScreen: View {
                         
                         HStack {
                             Spacer()
-                            BalanceView().environment(userVM)
+                            BalanceView(currencies: CurrencyVM()).environment(userVM)
                             Spacer()
                         }
                         .frame(alignment: .center)

@@ -7,6 +7,7 @@
 
 import Foundation
 import Observation
+//import Alamofire
 
 @Observable
 class CurrencyVM{
@@ -36,6 +37,12 @@ class CurrencyVM{
         }.resume()
         
     }
+    
+//    func currenciesWithAlamofire(){
+//        AF.request(url).response{ response in
+//            debugPrint(response)
+//        }
+//    }
     
     func dolarValue() -> Double {
         if let dolarCurrency = currencyList.first(where: { $0.name == "US Dollar" }) {

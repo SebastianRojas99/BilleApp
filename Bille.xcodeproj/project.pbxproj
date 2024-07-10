@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9604EA0D2C3CB04400C6D9C4 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604EA0C2C3CB04400C6D9C4 /* Dashboard.swift */; };
-		9604EA102C3EB6CF00C6D9C4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9604EA0F2C3EB6CF00C6D9C4 /* Alamofire */; };
-		9604EA122C3EB6CF00C6D9C4 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9604EA112C3EB6CF00C6D9C4 /* AlamofireDynamic */; };
+		9604EA152C3EBB0D00C6D9C4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9604EA142C3EBB0D00C6D9C4 /* Alamofire */; };
 		961DA92E2C2784FE006E7E97 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961DA92D2C2784FE006E7E97 /* OnBoardingView.swift */; };
 		961F2F4D2C21E0A000D83602 /* CreditCardTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961F2F4C2C21E0A000D83602 /* CreditCardTest.swift */; };
 		961F2F4F2C2258F100D83602 /* CreditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961F2F4E2C2258F100D83602 /* CreditCards.swift */; };
@@ -76,8 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9604EA102C3EB6CF00C6D9C4 /* Alamofire in Frameworks */,
-				9604EA122C3EB6CF00C6D9C4 /* AlamofireDynamic in Frameworks */,
+				9604EA152C3EBB0D00C6D9C4 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,8 +214,7 @@
 			);
 			name = Bille;
 			packageProductDependencies = (
-				9604EA0F2C3EB6CF00C6D9C4 /* Alamofire */,
-				9604EA112C3EB6CF00C6D9C4 /* AlamofireDynamic */,
+				9604EA142C3EBB0D00C6D9C4 /* Alamofire */,
 			);
 			productName = Bille;
 			productReference = 96B339A12C1D306800B910A5 /* Bille.app */;
@@ -248,7 +245,7 @@
 			);
 			mainGroup = 96B339982C1D306800B910A5;
 			packageReferences = (
-				9604EA0E2C3EB6CF00C6D9C4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				9604EA132C3EBB0D00C6D9C4 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 96B339A22C1D306800B910A5 /* Products */;
 			projectDirPath = "";
@@ -509,7 +506,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9604EA0E2C3EB6CF00C6D9C4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		9604EA132C3EBB0D00C6D9C4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -520,15 +517,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9604EA0F2C3EB6CF00C6D9C4 /* Alamofire */ = {
+		9604EA142C3EBB0D00C6D9C4 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9604EA0E2C3EB6CF00C6D9C4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 9604EA132C3EBB0D00C6D9C4 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		9604EA112C3EB6CF00C6D9C4 /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9604EA0E2C3EB6CF00C6D9C4 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

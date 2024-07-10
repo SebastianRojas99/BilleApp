@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BalanceView: View {
     @Environment(UserVM.self) private var userVM
+    @State var currencies:CurrencyVM?
     var body: some View {
         VStack(alignment:.center){
             Text("Total balance")
