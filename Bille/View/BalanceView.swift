@@ -15,12 +15,14 @@ struct BalanceView: View {
                 .font(.callout)
                 .foregroundStyle(.gray)
                 .frame(alignment: .center)
+                
                             
             Text("$\(userVM.amount ?? 0)")
                 .font(.system(size:50))
                 .bold()
                 .frame(alignment: .center)
                 .padding(.bottom,5)
+                
             
             HStack {
                 Button {

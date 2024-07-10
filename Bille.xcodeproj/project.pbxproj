@@ -34,7 +34,6 @@
 		96C367692C210FDC00988460 /* CurrencyMenuTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C367682C210FDC00988460 /* CurrencyMenuTest.swift */; };
 		96C824A42C275E8B009A62F7 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C824A32C275E8B009A62F7 /* Services.swift */; };
 		96D1A65A2C3607BC00080A64 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1A6592C3607BC00080A64 /* BalanceView.swift */; };
-		96D1A65C2C361B2900080A64 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1A65B2C361B2900080A64 /* NavBarView.swift */; };
 		96D1A65E2C36B33C00080A64 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1A65D2C36B33C00080A64 /* Category.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +66,6 @@
 		96C367682C210FDC00988460 /* CurrencyMenuTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyMenuTest.swift; sourceTree = "<group>"; };
 		96C824A32C275E8B009A62F7 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		96D1A6592C3607BC00080A64 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
-		96D1A65B2C361B2900080A64 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 		96D1A65D2C36B33C00080A64 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,7 +166,6 @@
 				961F2F4E2C2258F100D83602 /* CreditCards.swift */,
 				966AA8692C247FB30045871E /* NewCardModal.swift */,
 				96D1A6592C3607BC00080A64 /* BalanceView.swift */,
-				96D1A65B2C361B2900080A64 /* NavBarView.swift */,
 				9604EA0C2C3CB04400C6D9C4 /* Dashboard.swift */,
 			);
 			path = View;
@@ -285,7 +282,6 @@
 				967E41B52C21B696000043FE /* Card.swift in Sources */,
 				966462F02C2095E80010C414 /* CurrencyVM.swift in Sources */,
 				96D1A65E2C36B33C00080A64 /* Category.swift in Sources */,
-				96D1A65C2C361B2900080A64 /* NavBarView.swift in Sources */,
 				96C367692C210FDC00988460 /* CurrencyMenuTest.swift in Sources */,
 				962269782C1E76B900655D4B /* LoginView.swift in Sources */,
 				967E41B72C21C650000043FE /* DatabaseHardcoded.swift in Sources */,
