@@ -7,7 +7,7 @@
 
 import Foundation
 import Observation
-//import Alamofire
+import Alamofire
 
 @Observable
 class CurrencyVM{
@@ -17,37 +17,33 @@ class CurrencyVM{
     let url = "https://api.coingecko.com/api/v3/exchange_rates"
     
     init(){
-        getCurrencies()
+        currenciesWithAlamofire()
     }
     
-    func getCurrencies(){
-        guard let url = URL(string: url) else{return}
-        
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
-            guard let data = data else { return }
-            
-            do {
-                let response = try JSONDecoder().decode(CoinGeckoResponse.self, from: data)
-                DispatchQueue.main.async {
-                    self.currencyList =  Array(response.rates.values)
+    
+    func currenciesWithAlamofire(){
+        AF
+            .request(url,method: .get)
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: CoinGeckoResponse.self){ response in
+                
+                switch response.result {
+                case .success(let data):
+                    DispatchQueue.main.async {
+                        self.currencyList = Array(data.rates.values)
+                    }
+                case .failure(let error):
+                    print("Error al obtener los datos: \(error)")
                 }
-            } catch {
-                print("Error decoding JSON")
             }
-        }.resume()
+        
         
     }
-    
-//    func currenciesWithAlamofire(){
-//        AF.request(url).response{ response in
-//            debugPrint(response)
-//        }
-//    }
     
     func dolarValue() -> Double {
         if let dolarCurrency = currencyList.first(where: { $0.name == "US Dollar" }) {
             return dolarCurrency.value
-        } else {            
+        } else {
             return 0
         }
     }

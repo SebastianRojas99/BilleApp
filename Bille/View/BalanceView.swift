@@ -44,7 +44,7 @@ struct BalanceView: View {
                 }
                 
                 Button {
-                    // Acción para el botón de Income
+                    //
                 } label: {
                     HStack {
                         Image(systemName: "arrow.down")
