@@ -27,31 +27,37 @@ struct CurrencyMenu: View {
                                         .padding(.all, 10)
                                         .background(Color.red.opacity(0.4))
                                         .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                                    
                                     VStack(alignment: .leading) {
                                         Text("\(item.name)")
                                             .font(.caption)
                                             .foregroundColor(.gray)
-                                        
-                                        
                                     }
                                     .padding()
                                     
                                     Spacer()
                                     
-                                    Text("\(item.value / currencyVM.dolarValue())")
+                                    Text(String(format: "%.2f", item.value / currencyVM.dolarValue()))
                                         .bold()
                                         .font(.caption)
                                 }
+                                .frame(maxWidth: .infinity) // Asegurarse de que el HStack ocupe todo el ancho
                             }
+                            .padding(.vertical, 5) // Espacio entre las celdas de la lista
                         }
                     }
                 }
-                
-            }.preferredColorScheme(.dark)
+                .listStyle(PlainListStyle()) // Estilo de lista plano
+                .frame(maxWidth: .infinity) // Asegurarse de que la lista ocupe todo el ancho
+            }
+            .preferredColorScheme(.dark)
+            .frame(maxWidth: .infinity) // Asegurarse de que el VStack ocupe todo el ancho
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity) // Asegurarse de que se ajusta al contenedor
+        .navigationBarHidden(true)
+        .frame(maxWidth: .infinity, maxHeight: .infinity) // Asegurarse de que NavigationStack ocupe todo el ancho y alto
     }
 }
+
 #Preview {
     CurrencyMenu()
 }

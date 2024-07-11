@@ -11,6 +11,7 @@ struct HomeScreen: View {
     @Environment(UserVM.self) private var userVM
     @Environment(CardVM.self) private var cardVM
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+    @State private var selectedCategory = "Dashboard"
     
     var body: some View {
         NavigationStack {
@@ -41,35 +42,43 @@ struct HomeScreen: View {
                                     .foregroundStyle(isDarkMode ? .brown.opacity(0.7) : .yellow)
                             }
                         }
-                        
+                        .padding(.horizontal)
                         
                         HStack {
                             Spacer()
                             BalanceView(currencies: CurrencyVM()).environment(userVM)
                             Spacer()
                         }
-                        .frame(alignment: .center)
-                        .padding(.bottom,5)
-                                                
+                        .frame(maxWidth: .infinity)
+                        .padding(.bottom, 5)
                         
                         VStack(alignment: .leading) {
                             CurrencyMenu()
-                                .frame(height: 350)
                                 .frame(maxWidth: .infinity)
+                                .frame(height: 350)
                                 .cornerRadius(15)
                                 .padding()
                                 .preferredColorScheme(isDarkMode ? .dark : .light)
                         }
-                        
+                        .frame(maxWidth: .infinity)
                     }
                     .padding()
+                    .frame(maxWidth: .infinity)
                     
                     Spacer()
-                    Dashboard()
+                    Dashboard(selectedCategory: $selectedCategory)
+                        .frame(maxWidth: .infinity)
                 }
                 .padding()
+                .frame(maxWidth: .infinity)
                 .environment(userVM)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
+}
+
+#Preview {
+    HomeScreen()
 }

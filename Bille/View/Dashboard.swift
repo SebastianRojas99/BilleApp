@@ -8,33 +8,36 @@
 import SwiftUI
 
 struct Dashboard: View {
-    //@State var category:CategoryVM
-    //@Binding var selectedCategory: String
-    var body: some View {
-        HStack{
-            ForEach(0...3,id:\.self){ item in
-                HStack{
-                    HStack{
-                        Button{
-                            
-                        }label: {
-                            Image(systemName: "arrow.right")
-                                .foregroundStyle(.white)
-                            
-                        }
-                        Text("icon")
-                    }
-                }
-                                
-            }
-        }
-        .padding()
-        .background(.green)
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-        
-    }
-}
-
-#Preview {
-    Dashboard()
-}
+    @State var viewModel = CategoryVM(categoryList: categoryList)
+       @Binding var selectedCategory: String
+       
+       var body: some View {
+           ScrollView(.horizontal, showsIndicators: false) {
+               HStack {
+                   ForEach(viewModel.categoryList) { item in
+                       Button(action: {
+                           selectedCategory = item.title
+                       }) {
+                           HStack {
+                               if item.title != "All" {
+                                   Image(systemName: item.icon)
+                                       .foregroundStyle(selectedCategory == item.title ? .brown : .black)
+                                   if selectedCategory == item.title {
+                                       Text(item.title)
+                                   }
+                               } else {
+                                   Text("All")
+                               }
+                           }
+                           .padding()
+                           .background(selectedCategory == item.title ? item.color.opacity(0.4) : .gray.opacity(0.3))
+                           .foregroundStyle(.black)
+                           .clipShape(Capsule())
+                           .animation(.easeInOut, value: selectedCategory)
+                       }
+                   }
+               }
+           }
+           .padding(.horizontal, 12)
+       }
+   }

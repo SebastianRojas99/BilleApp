@@ -50,8 +50,9 @@ var users: [User] = [
 ]
 
 var categoryList:[Category] = [
-    Category(icon: "", title: "Dashboard"),
-    Category(icon: "figure.run", title: "Cards"),
-    Category(icon: "basketball", title: "Services"),
-    Category(icon: "figure", title: "Profile"),
+    Category(icon: "house.fill", title: "Dashboard"),
+    Category(icon: "creditcard.fill", title: "Cards"),
+    Category(icon: "bag.fill", title: "Services"),
+    Category(icon: "person.crop.circle.fill", title: "Profile"),
 ]
+

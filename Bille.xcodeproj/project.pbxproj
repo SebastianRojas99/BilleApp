@@ -21,6 +21,7 @@
 		966462F02C2095E80010C414 /* CurrencyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966462EF2C2095E80010C414 /* CurrencyVM.swift */; };
 		966462F22C20BAD00010C414 /* CurrencyMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966462F12C20BAD00010C414 /* CurrencyMenu.swift */; };
 		966AA86A2C247FB30045871E /* NewCardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966AA8692C247FB30045871E /* NewCardModal.swift */; };
+		967D07BC2C4024090042215D /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D07BB2C4024090042215D /* ColorUtils.swift */; };
 		967E41B52C21B696000043FE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E41B42C21B696000043FE /* Card.swift */; };
 		967E41B72C21C650000043FE /* DatabaseHardcoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E41B62C21C650000043FE /* DatabaseHardcoded.swift */; };
 		96AAB7682C2477E0004DD26E /* CardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AAB7672C2477E0004DD26E /* CardVM.swift */; };
@@ -52,6 +53,7 @@
 		966462EF2C2095E80010C414 /* CurrencyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyVM.swift; sourceTree = "<group>"; };
 		966462F12C20BAD00010C414 /* CurrencyMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyMenu.swift; sourceTree = "<group>"; };
 		966AA8692C247FB30045871E /* NewCardModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardModal.swift; sourceTree = "<group>"; };
+		967D07BB2C4024090042215D /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		967E41B42C21B696000043FE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		967E41B62C21C650000043FE /* DatabaseHardcoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHardcoded.swift; sourceTree = "<group>"; };
 		96AAB7672C2477E0004DD26E /* CardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVM.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		96B339B62C1D345500B910A5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				967D07BB2C4024090042215D /* ColorUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967D07BC2C4024090042215D /* ColorUtils.swift in Sources */,
 				96AAB7682C2477E0004DD26E /* CardVM.swift in Sources */,
 				96B339BB2C1D423B00B910A5 /* RegisterModal.swift in Sources */,
 				96B339BF2C1D4A3A00B910A5 /* UserVM.swift in Sources */,
