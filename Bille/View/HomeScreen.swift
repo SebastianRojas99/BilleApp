@@ -65,6 +65,7 @@ struct HomeScreen: View {
                     .padding()
                     
                     Spacer()
+                    Dashboard()
                 }
                 .padding()
                 .environment(userVM)
