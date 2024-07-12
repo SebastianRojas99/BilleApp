@@ -10,7 +10,10 @@ import SwiftUI
 struct Profile: View {
     @Environment(UserVM.self) private var uservm
     var body: some View {
-        Text(uservm.username ?? "invitado")
+        //Text(uservm.username ?? "invitado")
+        Text("👷🏼‍♂️⚒️ ASAP Profile")
+            .font(.largeTitle)
+        
     }
 }
 
