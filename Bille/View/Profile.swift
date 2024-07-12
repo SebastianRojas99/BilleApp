@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct Profile: View {
+    @Environment(UserVM.self) private var uservm
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(uservm.username ?? "invitado")
     }
 }
 

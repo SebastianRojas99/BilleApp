@@ -13,36 +13,31 @@ struct HomeScreen: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @State private var selectedCategory = "Dashboard"
     var body: some View{
-        VStack{
-            switch selectedCategory{
-            case "Dashboard":
-                Dashboard()
-            
-            case "Cards":
-                CreditCards().environment(userVM)
-                
-            case "Services":
-                ServicesMenu()
-            
-            case "Profile":
-                Profile()
-                
-            default:
-                Dashboard()
-            }
-            Spacer()
+        NavigationStack{
             VStack{
-                Navbar(selectedCategory: $selectedCategory)
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
+                switch selectedCategory{
+                case "Dashboard":
+                    Dashboard()
+                
+                case "Cards":
+                    CreditCards().environment(userVM).environment(cardVM)
                     
+                case "Services":
+                    ServicesMenu()
+                
+                case "Profile":
+                    Profile()
                     
+                default:
+                    Dashboard()
+                }
+                Spacer()
+                VStack{
+                    Navbar(selectedCategory: $selectedCategory)
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                }
             }
-            
         }
     }
-    }
-
-#Preview {
-    HomeScreen()
 }
