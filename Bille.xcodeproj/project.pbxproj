@@ -22,6 +22,9 @@
 		966462F22C20BAD00010C414 /* CurrencyMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966462F12C20BAD00010C414 /* CurrencyMenu.swift */; };
 		966AA86A2C247FB30045871E /* NewCardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966AA8692C247FB30045871E /* NewCardModal.swift */; };
 		967D07BC2C4024090042215D /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D07BB2C4024090042215D /* ColorUtils.swift */; };
+		967D07BE2C4165850042215D /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D07BD2C4165850042215D /* Navbar.swift */; };
+		967D07C02C4173910042215D /* ServicesMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D07BF2C4173910042215D /* ServicesMenu.swift */; };
+		967D07C22C4173B70042215D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D07C12C4173B70042215D /* Profile.swift */; };
 		967E41B52C21B696000043FE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E41B42C21B696000043FE /* Card.swift */; };
 		967E41B72C21C650000043FE /* DatabaseHardcoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E41B62C21C650000043FE /* DatabaseHardcoded.swift */; };
 		96AAB7682C2477E0004DD26E /* CardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AAB7672C2477E0004DD26E /* CardVM.swift */; };
@@ -54,6 +57,9 @@
 		966462F12C20BAD00010C414 /* CurrencyMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyMenu.swift; sourceTree = "<group>"; };
 		966AA8692C247FB30045871E /* NewCardModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardModal.swift; sourceTree = "<group>"; };
 		967D07BB2C4024090042215D /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		967D07BD2C4165850042215D /* Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
+		967D07BF2C4173910042215D /* ServicesMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesMenu.swift; sourceTree = "<group>"; };
+		967D07C12C4173B70042215D /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		967E41B42C21B696000043FE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		967E41B62C21C650000043FE /* DatabaseHardcoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHardcoded.swift; sourceTree = "<group>"; };
 		96AAB7672C2477E0004DD26E /* CardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVM.swift; sourceTree = "<group>"; };
@@ -171,6 +177,8 @@
 				966AA8692C247FB30045871E /* NewCardModal.swift */,
 				96D1A6592C3607BC00080A64 /* BalanceView.swift */,
 				9604EA0C2C3CB04400C6D9C4 /* Dashboard.swift */,
+				967D07BF2C4173910042215D /* ServicesMenu.swift */,
+				967D07C12C4173B70042215D /* Profile.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				961DA92D2C2784FE006E7E97 /* OnBoardingView.swift */,
+				967D07BD2C4165850042215D /* Navbar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -277,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				967D07BC2C4024090042215D /* ColorUtils.swift in Sources */,
+				967D07C22C4173B70042215D /* Profile.swift in Sources */,
 				96AAB7682C2477E0004DD26E /* CardVM.swift in Sources */,
 				96B339BB2C1D423B00B910A5 /* RegisterModal.swift in Sources */,
 				96B339BF2C1D4A3A00B910A5 /* UserVM.swift in Sources */,
@@ -289,6 +299,7 @@
 				96B339A52C1D306800B910A5 /* BilleApp.swift in Sources */,
 				966462EE2C2092F60010C414 /* Currency.swift in Sources */,
 				96556FBD2C1FEEB9003A5C05 /* HomeScreen.swift in Sources */,
+				967D07C02C4173910042215D /* ServicesMenu.swift in Sources */,
 				962269762C1E72F100655D4B /* UserCredentials.swift in Sources */,
 				966462F22C20BAD00010C414 /* CurrencyMenu.swift in Sources */,
 				967E41B52C21B696000043FE /* Card.swift in Sources */,
@@ -297,6 +308,7 @@
 				96C367692C210FDC00988460 /* CurrencyMenuTest.swift in Sources */,
 				962269782C1E76B900655D4B /* LoginView.swift in Sources */,
 				967E41B72C21C650000043FE /* DatabaseHardcoded.swift in Sources */,
+				967D07BE2C4165850042215D /* Navbar.swift in Sources */,
 				962117562C3B5858000EF67B /* CategoryVM.swift in Sources */,
 				9604EA0D2C3CB04400C6D9C4 /* Dashboard.swift in Sources */,
 				962B36DB2C2A1C5400648C37 /* ServicesVM.swift in Sources */,
