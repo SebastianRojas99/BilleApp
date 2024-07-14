@@ -14,7 +14,9 @@ class CurrencyVM{
     
     
     var currencyList:[Currency] = []
+    var errorFlag:Bool = false
     let url = "https://api.coingecko.com/api/v3/exchange_rates"
+    
     
     init(){
         currenciesWithAlamofire()
@@ -34,6 +36,7 @@ class CurrencyVM{
                     }
                 case .failure(let error):
                     print("Error al obtener los datos: \(error)")
+                    self.errorFlag = true
                 }
             }
         

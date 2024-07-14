@@ -35,8 +35,8 @@ struct CreditCards: View {
                 }.buttonStyle(.borderedProminent).padding(.horizontal)
             }.padding(.top, 12)
             
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 20) {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(spacing: 20) {
                     ForEach(userVM.userCards, id: \.self) { item in
                         HStack {
                             VStack(alignment: .leading) {
