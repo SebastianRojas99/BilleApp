@@ -27,23 +27,6 @@ struct RegisterModal: View {
             }
             
             VStack {
-
-//                    Image(systemName: "creditcard.fill")
-//                        .resizable()
-//                        .foregroundStyle(pulsate ? .purple.opacity(1) : .purple.opacity(0.3))
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: 100, height: 50)
-//                        .foregroundColor(.blue)
-//                        .scaleEffect(pulsate ? 1.2 : 1.0)
-//                        .padding(.top)
-//                        .onAppear {
-//                            withAnimation(
-//                                Animation.easeInOut(duration: 1.0)
-//                                    .repeatForever(autoreverses: true)
-//                            ) {
-//                                self.pulsate = true
-//                            }
-//                        }
                 
                 Text("Welcome to Bille")
                     .font(.system(size: 36))
