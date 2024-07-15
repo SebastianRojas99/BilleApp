@@ -63,7 +63,7 @@ class UserVM{
             print("error de tarjetas")
         }
     }
-    func delete(_ card: Card, _ username: String) {
+    func deleteCard(_ card: Card, _ username: String) {
         // Verificar si el usuario existe
         if users.first(where: { $0.username == username || $0.email == username }) != nil {
             // Encontrar el índice de la tarjeta en el array

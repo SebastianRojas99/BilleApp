@@ -10,6 +10,8 @@ import SwiftUI
 struct CreditCards: View {
     @Environment(UserVM.self)  var userVM
     @Environment(CardVM.self)  var cardVM
+    @Environment(\.dismiss.self) var dismiss
+    @State private var showConfirmationDialog = false
     @State private var isShow: Bool = false
     
     var body: some View {
@@ -78,10 +80,36 @@ struct CreditCards: View {
                         .background(item.typeCard == "Visa" ? LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .topLeading, endPoint: .bottomTrailing) : LinearGradient(gradient: Gradient(colors: [Color.yellow, Color.red]), startPoint: .topLeading, endPoint: .bottomTrailing))
                         .cornerRadius(15)
                         .shadow(radius: 10)
+                        .onLongPressGesture {
+                                            showConfirmationDialog = true
+                                        }
+                            if showConfirmationDialog {
+                                VStack {
+                                    Text("¿Desea borrar la tarjeta?")
+                                    HStack {
+                                        Button(action: {                                            
+                                            userVM.deleteCard(item, userVM.username ?? "")
+                                            showConfirmationDialog = false
+                                        }) {
+                                            Text("Sí")
+                                        }
+                                        Button(action: {
+                                            showConfirmationDialog = false
+                                        }) {
+                                            Text("No")
+                                        }
+                                    }
+                                }
+                                .padding()
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .shadow(radius: 10)
+                            }
+                            
+                        }.padding(.horizontal)
                     }
-                }.padding(.horizontal)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-}
