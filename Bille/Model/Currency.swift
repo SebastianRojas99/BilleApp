@@ -12,6 +12,7 @@ struct Currency:Hashable,Codable{
     var unit:String
     var value:Double
     var type:String
+    var flag:String
 }
 
 struct CoinGeckoResponse: Codable {

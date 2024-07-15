@@ -81,7 +81,7 @@ struct CreditCards: View {
                         .cornerRadius(15)
                         .shadow(radius: 10)
                         .onLongPressGesture{
-                            selectedCard = item                            
+                            selectedCard = item
                         }
                         .contextMenu {
                             Button(role:.destructive){
@@ -89,7 +89,11 @@ struct CreditCards: View {
                                     userVM.deleteCard(card, userVM.username ?? "")
                                 }
                             }label:{
-                                Text("delete")
+                                HStack{
+                                    Text("delete")
+                                    Image(systemName: "trash")
+                                }
+                                
                             }
                         }
                         }.padding(.horizontal)

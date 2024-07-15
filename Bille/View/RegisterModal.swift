@@ -17,26 +17,67 @@ struct RegisterModal: View {
     
     var body: some View {
         ZStack {
-            Button {
-                isPresented = true
-            } label: {
+            // Fondo con imagen difuminada
+            GeometryReader { geometry in
                 Image("walletRegister")
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .clipped()
+                    .overlay(.black.opacity(0.3)) // Añade una capa oscura semitransparente si quieres oscurecer la imagen
                     .ignoresSafeArea()
+                    .padding(.top,120)
             }
             
             VStack {
+            
                 
                 Text("Welcome to Bille")
                     .font(.system(size: 36))
-                    .foregroundStyle(.white)
+                    .foregroundColor(.white)
                     .bold()
-                    .fontWeight(.heavy)
                     .shadow(color: .purple, radius: 8)
                     .padding(.top, 20)
                 
+                
+                VStack(alignment:.leading){
+                    ForEach(currencyForLogin,id: \.self){currency in
+                        VStack(alignment:.leading){
+                            HStack{
+                                Text(currency["icon"] ?? "")
+                                    .font(.largeTitle)
+                                VStack(alignment:.leading){
+                                    Text(currency["name"] ?? "")
+                                    Text(currency["unit"] ?? "")
+                                }
+                            }
+                        }
+                        .frame(alignment: .leading)
+                        .padding()
+                        
+                    }
+                }
+                .foregroundStyle(.white)
+                .padding(.top,10)
+                
+                    
+                
                 Spacer()
+                
+                Button {
+                    isPresented = true
+                } label: {
+                    Text("Get Started")
+                        .font(.title2)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.teal.opacity(0.4))
+                        .cornerRadius(25)
+                        .shadow(color: .purple, radius: 8)
+                        
+                }
+                .padding(.bottom, 50)
             }
             .sheet(isPresented: $isPresented, onDismiss: {
                 if isLogged {
@@ -54,6 +95,7 @@ struct RegisterModal: View {
                 HomeScreen().environment(userVM)
             }
         }
+        .background(Color.black)
         .onChange(of: isLogged) {
             if isLogged {
                 isPresented = false

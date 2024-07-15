@@ -56,3 +56,9 @@ var categoryList:[Category] = [
     Category(icon: "person.crop.circle.fill", title: "Profile"),
 ]
 
+var currencyForLogin = [
+    ["icon":"🇺🇸","name": "US Dollar","unit":"USD"],
+    ["icon":"🇪🇺","name": "Euro","unit":"EUR"],
+    ["icon":"🇸🇪","name": "Swedish Crown","unit":"SEK"]
+    
+]
