@@ -45,18 +45,27 @@ struct RegisterModal: View {
                         VStack(alignment:.leading){
                             HStack{
                                 Text(currency["icon"] ?? "")
+                                    .clipShape(Capsule())
                                     .font(.largeTitle)
+                                    .background(.gray)
+                                    
+                                    
                                 VStack(alignment:.leading){
                                     Text(currency["name"] ?? "")
                                     Text(currency["unit"] ?? "")
                                 }
                             }
                         }
-                        .frame(alignment: .leading)
-                        .padding()
+                        
+                        
                         
                     }
+                    .frame(maxWidth: .infinity,alignment: .leading)
+                        .clipShape(RoundedRectangle(cornerRadius: 25))
+                        .padding()
+                        .background(.secondary)
                 }
+                
                 .foregroundStyle(.white)
                 .padding(.top,10)
                 
