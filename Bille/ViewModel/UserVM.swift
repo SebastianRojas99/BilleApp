@@ -63,5 +63,20 @@ class UserVM{
             print("error de tarjetas")
         }
     }
+    func delete(_ card: Card, _ username: String) {
+        // Verificar si el usuario existe
+        if users.first(where: { $0.username == username || $0.email == username }) != nil {
+            // Encontrar el índice de la tarjeta en el array
+            if let index = userCards.firstIndex(where: { $0.id == card.id }) {
+                // Eliminar la tarjeta en la posición encontrada
+                userCards.remove(at: index)
+                print("Tarjeta eliminada correctamente")
+            } else {
+                print("Error: Tarjeta no encontrada")
+            }
+        } else {
+            print("Error: Usuario no encontrado")
+        }
+    }
 }
 
