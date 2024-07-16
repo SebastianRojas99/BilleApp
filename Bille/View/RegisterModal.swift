@@ -14,20 +14,27 @@ struct RegisterModal: View {
     @Environment(CardVM.self) private var cardVM
     @State private var isLogged: Bool = false
     @State private var showContentView: Bool = false
+    @State var degreesRotating = 0.0
     
     var body: some View {
         ZStack {
             // Fondo con imagen difuminada
             GeometryReader { geometry in
-                Image("walletRegister")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                    .clipped()
-                    .overlay(.black.opacity(0.3)) // Añade una capa oscura semitransparente si quieres oscurecer la imagen
+                        Image("walletRegister")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .clipped()
+                            .overlay(Color.black.opacity(0.3)) // Añade una capa oscura semitransparente si quieres oscurecer la imagen
+                            .rotationEffect(.degrees(degreesRotating), anchor: .center) // Ajuste del punto de anclaje al centro
+                            .onAppear {
+                                withAnimation(Animation.linear(duration: 20)
+                                    .repeatForever(autoreverses: false)) {
+                                        degreesRotating = 360.0
+                                    }
+                            }
+                    }
                     .ignoresSafeArea()
-                    .padding(.top,120)
-            }
             
             VStack {
             
@@ -45,9 +52,10 @@ struct RegisterModal: View {
                         VStack(alignment:.leading){
                             HStack{
                                 Text(currency["icon"] ?? "")
-                                    .clipShape(Capsule())
+                                    .padding(5)
                                     .font(.largeTitle)
                                     .background(.gray)
+                                    .clipShape(Circle())
                                     
                                     
                                 VStack(alignment:.leading){
@@ -60,10 +68,10 @@ struct RegisterModal: View {
                         
                         
                     }
-                    .frame(maxWidth: .infinity,alignment: .leading)
-                        .clipShape(RoundedRectangle(cornerRadius: 25))
+                    .frame(width:350, alignment: .leading)
                         .padding()
-                        .background(.secondary)
+                        .background(.gray.opacity(0.2))
+                        .clipShape(RoundedRectangle(cornerRadius: 24))
                 }
                 
                 .foregroundStyle(.white)
@@ -72,6 +80,8 @@ struct RegisterModal: View {
                     
                 
                 Spacer()
+                
+                //BUTTON
                 
                 Button {
                     isPresented = true
