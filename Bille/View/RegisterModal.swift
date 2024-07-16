@@ -60,7 +60,9 @@ struct RegisterModal: View {
                                     
                                 VStack(alignment:.leading){
                                     Text(currency["name"] ?? "")
+                                        .bold()
                                     Text(currency["unit"] ?? "")
+                                        .foregroundStyle(.gray)
                                 }
                             }
                         }
@@ -72,8 +74,8 @@ struct RegisterModal: View {
                         .padding()
                         .background(.gray.opacity(0.2))
                         .clipShape(RoundedRectangle(cornerRadius: 24))
+                        
                 }
-                
                 .foregroundStyle(.white)
                 .padding(.top,10)
                 
