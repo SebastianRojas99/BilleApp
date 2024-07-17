@@ -12,8 +12,11 @@ import Observation
 class CardVM{
     
     
-    func delete(card:Card){
-        //users.first(where: {$0.cards.ca})
-    }
+    
+    
+   
+    
+    
+ 
     
 }
