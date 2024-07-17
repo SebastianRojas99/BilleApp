@@ -20,18 +20,19 @@ struct RegisterModal: View {
         ZStack {
             // Fondo con imagen difuminada
             GeometryReader { geometry in
-                        Image("walletRegister")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: geometry.size.width, height: geometry.size.height)
-                            .clipped()
-                            .overlay(Color.black.opacity(0.3)) // Añade una capa oscura semitransparente si quieres oscurecer la imagen
-                            .rotationEffect(.degrees(degreesRotating), anchor: .center) // Ajuste del punto de anclaje al centro
-                            .onAppear {
-                                withAnimation(Animation.linear(duration: 20)
-                                    .repeatForever(autoreverses: false)) {
-                                        degreesRotating = 360.0
-                                    }
+                Image("walletRegister")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .clipped()
+                    .overlay(Color.black.opacity(0.3)) // Añade una capa oscura semitransparente si quieres oscurecer la imagen
+                    .rotationEffect(.degrees(degreesRotating), anchor: .center) // Ajuste del punto de anclaje al centro
+                    .mask(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom)) // Aplica el gradiente como una máscara
+                    .onAppear {
+                        withAnimation(Animation.linear(duration: 20)
+                            .repeatForever(autoreverses: false)) {
+                                degreesRotating = 360.0
+                            }                    
                             }
                     }
                     .ignoresSafeArea()
