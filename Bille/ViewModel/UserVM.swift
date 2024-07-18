@@ -13,6 +13,7 @@ import Observation
 class UserVM{
     
     var username:String?
+    
     var amount:Int?
     var userList: [User] = []
     var userCards:[Card] = []
@@ -55,7 +56,7 @@ class UserVM{
         // Buscar usuario en la lista de usuarios
         if users.first(where: { ($0.email == email || $0.username == email) && $0.password == password }) != nil {     
             
-            username = email            
+            username = email
             getCards(email)
             getAmount(email)
             return true

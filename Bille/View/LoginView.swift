@@ -22,7 +22,7 @@ struct LoginView: View {
                         Text("Login")
                             .font(.largeTitle)
                             .bold()
-                            .foregroundStyle(.pink)
+                            .foregroundStyle(.teal)
                             .opacity(0.7)
                             .frame(alignment:.leading)
                         Spacer()
@@ -42,7 +42,7 @@ struct LoginView: View {
                             .autocapitalization(.none)
                             .frame(height: 20)
                             .padding()
-                            .background(.pink)
+                            .background(.teal)
                             .clipShape(.rect(cornerRadius: 10))
                             
                     }
@@ -61,12 +61,12 @@ struct LoginView: View {
                         .foregroundStyle(.white)
                         .frame(height: 20)
                         .padding()
-                        .background(.pink)
+                        .background(.teal)
                         .clipShape(.rect(cornerRadius: 10))
                         .tint(.gray)
                     
                     
-                }.padding().foregroundStyle(.red)
+                }.padding().foregroundStyle(.blue)
                 
                 HStack{
                     Spacer()
@@ -95,7 +95,7 @@ struct LoginView: View {
                         .font(.title2)
                         .padding(12)
                         .frame(maxWidth: .infinity)
-                        .background(username == "" || password == "" ? .gray : .pink)
+                        .background(username == "" || password == "" ? .gray : .teal)
                         .clipShape(.rect(cornerRadius: 10))
                         .padding()
                         .foregroundStyle(.white)
@@ -112,7 +112,7 @@ struct LoginView: View {
                         .font(.title2)
                         .padding(12)
                         .frame(maxWidth: .infinity)
-                        .background(.pink)
+                        .background(.teal)
                         .clipShape(.rect(cornerRadius: 10))
                         .padding()
                         .foregroundStyle(.white)
