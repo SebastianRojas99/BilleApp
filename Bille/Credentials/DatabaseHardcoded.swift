@@ -14,7 +14,7 @@ var users: [User] = [
          lastname: "Rojas",
          username: "seba", email: "sebarojas@example.com",
          address: "AV gatorade 123",
-         birthday: DateFormatter().date(from: "01/15/2001") ?? Date(),
+         birthday: DateFormatter.yearMonthDay.date(from: "2014-06-06") ?? Date() ,
          password: "123",
          accountAmount: 300, cards: [
             Card(name: "S MARQUEZ ROJAS".lowercased(), typeCard: "MasterCard", number: "2550 3030 9494 1112", expiryDate: "11/28", cvv: "333", credit: 1000000),

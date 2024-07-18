@@ -40,6 +40,7 @@
 		96C824A42C275E8B009A62F7 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C824A32C275E8B009A62F7 /* Services.swift */; };
 		96D1A65A2C3607BC00080A64 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1A6592C3607BC00080A64 /* BalanceView.swift */; };
 		96D1A65E2C36B33C00080A64 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1A65D2C36B33C00080A64 /* Category.swift */; };
+		96F698652C496E6300372DE6 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F698642C496E6300372DE6 /* DateUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		96C824A32C275E8B009A62F7 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		96D1A6592C3607BC00080A64 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		96D1A65D2C36B33C00080A64 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		96F698642C496E6300372DE6 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				967D07BB2C4024090042215D /* ColorUtils.swift */,
+				96F698642C496E6300372DE6 /* DateUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				96B339A72C1D306800B910A5 /* ContentView.swift in Sources */,
 				961DA92E2C2784FE006E7E97 /* OnBoardingView.swift in Sources */,
 				96D1A65A2C3607BC00080A64 /* BalanceView.swift in Sources */,
+				96F698652C496E6300372DE6 /* DateUtils.swift in Sources */,
 				96C824A42C275E8B009A62F7 /* Services.swift in Sources */,
 				961F2F4D2C21E0A000D83602 /* CreditCardTest.swift in Sources */,
 				96B339A52C1D306800B910A5 /* BilleApp.swift in Sources */,

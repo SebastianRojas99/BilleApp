@@ -11,9 +11,11 @@ import Observation
 
 @Observable
 class UserVM{
-    
+    var name:String = ""
+    var lastname:String = ""
+    var address:String = ""
+    var birthday:Date = DateFormatter().date(from: "01/15/2021") ?? Date()
     var username:String?
-    
     var amount:Int?
     var userList: [User] = []
     var userCards:[Card] = []
@@ -54,16 +56,21 @@ class UserVM{
     
     func validation(_ email: String, _ password: String) -> Bool {
         // Buscar usuario en la lista de usuarios
-        if users.first(where: { ($0.email == email || $0.username == email) && $0.password == password }) != nil {     
-            
-            username = email
-            getCards(email)
-            getAmount(email)
+        if let user = users.first(where: { ($0.email == email || $0.username == email) && $0.password == password }) {
+            // Usuario encontrado y contraseña coincide
+            username = user.username
+            name = user.name  // Asignar el nombre del usuario encontrado
+            lastname = user.lastname
+            address = user.address
+            birthday = user.birthday
+            getCards(email)   // Asumimos que este método obtiene las tarjetas del usuario
+            getAmount(email)  // Asumimos que este método obtiene el monto del usuario
             return true
         }
         // Usuario no encontrado o contraseña no coincide
         return false
     }
+
     func register(){
         
     }
