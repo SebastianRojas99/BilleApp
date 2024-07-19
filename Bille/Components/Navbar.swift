@@ -13,33 +13,30 @@ struct Navbar: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
+         
             HStack {
                 ForEach(viewModel.categoryList) { item in
                     Button(action: {
                         selectedCategory = item.title
                     }) {
-                        HStack {
+                        VStack {
                             Image(systemName: item.icon)
                                 .scaledToFit()
                                 .imageScale(.large)
                                 .padding()
-                                .foregroundStyle(selectedCategory == item.title ? .white : .gray.opacity(0.6))
-                                .background(isDarkMode ? .black : .black.opacity(0))
+                                .foregroundStyle(selectedCategory == item.title ? (isDarkMode ? .white : .black) : Color.gray.opacity(0.6))
+                                .background(isDarkMode ? Color.black : Color.black.opacity(0))
                                 .clipShape(Circle())
+
                             
-                            if item.title != "All" && selectedCategory == item.title {
                                 Text(item.title)
                                     .foregroundStyle(isDarkMode ? .white : .black)
-                            } else if item.title == "All" {
-                                Text("All")
-                                    .foregroundColor(.black)
-                            }
+                                    .font(.caption2)
+                                    
                         }
                         .animation(.easeInOut, value: selectedCategory)
                     }
-                }
-            }            
+                }.padding(.horizontal,10)
         }
         .padding()
         .preferredColorScheme(isDarkMode ? .dark : .light)
