@@ -63,7 +63,9 @@ struct BalanceView: View {
             .padding(.top, 5)
             
         }
-        .padding(.top, 10)
+        .padding(.all,35)
+        .background(LinearGradient(colors: [.red,.blue,.purple], startPoint: .top, endPoint: .bottomTrailing))
+        .clipShape(RoundedRectangle(cornerRadius: 25))
     }
 }
 
