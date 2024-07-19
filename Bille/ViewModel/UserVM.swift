@@ -11,6 +11,7 @@ import Observation
 
 @Observable
 class UserVM{
+    var image:String = ""
     var name:String = ""
     var lastname:String = ""
     var address:String = ""
@@ -58,6 +59,7 @@ class UserVM{
         // Buscar usuario en la lista de usuarios
         if let user = users.first(where: { ($0.email == email || $0.username == email) && $0.password == password }) {
             // Usuario encontrado y contraseña coincide
+            image = user.image
             username = user.username
             name = user.name  // Asignar el nombre del usuario encontrado
             lastname = user.lastname

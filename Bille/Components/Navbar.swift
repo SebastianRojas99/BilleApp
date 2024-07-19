@@ -10,6 +10,7 @@ import SwiftUI
 struct Navbar: View {
     @State var viewModel = CategoryVM(categoryList: categoryList)
     @Binding var selectedCategory: String
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -20,16 +21,16 @@ struct Navbar: View {
                     }) {
                         HStack {
                             Image(systemName: item.icon)
-                                .scaledToFill()
-                                .imageScale(.medium)
+                                .scaledToFit()
+                                .imageScale(.large)
                                 .padding()
-                                .foregroundStyle(selectedCategory == item.title ? .white : .black)
-                                .background(selectedCategory == item.title ? Color.black : Color.gray.opacity(0.3))
+                                .foregroundStyle(selectedCategory == item.title ? .white : .gray.opacity(0.6))
+                                .background(isDarkMode ? .black : .black.opacity(0))
                                 .clipShape(Circle())
                             
                             if item.title != "All" && selectedCategory == item.title {
                                 Text(item.title)
-                                    .foregroundColor(.black)
+                                    .foregroundStyle(isDarkMode ? .white : .black)
                             } else if item.title == "All" {
                                 Text("All")
                                     .foregroundColor(.black)
@@ -41,7 +42,7 @@ struct Navbar: View {
             }            
         }
         .padding()
-        .background(.green)
+        .preferredColorScheme(isDarkMode ? .dark : .light)
         .clipShape(RoundedRectangle(cornerRadius: 50))
         .frame(maxWidth: .infinity)
     }

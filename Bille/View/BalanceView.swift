@@ -14,7 +14,7 @@ struct BalanceView: View {
         VStack(alignment:.center){
             Text("Total balance")
                 .font(.callout)
-                .foregroundStyle(.gray)
+                .foregroundStyle(.white)
                 .frame(alignment: .center)
                 
                             
@@ -30,9 +30,9 @@ struct BalanceView: View {
                     // Acción para el botón de Transfer
                 } label: {
                     HStack {
-                        Image(systemName: "arrow.right")
+                        Image(systemName: "arrow.up.circle")
                             .foregroundStyle(.black)
-                        Text("Send")
+                        Text("Withdraw")
                             .font(.title3)
                             .foregroundStyle(.white)
                     }
@@ -47,9 +47,9 @@ struct BalanceView: View {
                     //
                 } label: {
                     HStack {
-                        Image(systemName: "arrow.down")
+                        Image(systemName: "arrow.down.circle")
                             .foregroundStyle(.black)
-                        Text("Receive")
+                        Text("Deposit")
                             .font(.title3)
                             .foregroundStyle(.white)
                     }
@@ -64,7 +64,8 @@ struct BalanceView: View {
             
         }
         .padding(.all,35)
-        .background(LinearGradient(colors: [.red,.blue,.purple], startPoint: .top, endPoint: .bottomTrailing))
+        .background(LinearGradient(colors: [.pink,.pink,.white], startPoint: .top, endPoint: .bottom))
+              
         .clipShape(RoundedRectangle(cornerRadius: 25))
     }
 }

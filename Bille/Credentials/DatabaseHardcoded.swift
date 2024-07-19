@@ -10,7 +10,7 @@ import Foundation
 
 var users: [User] = [
     
-    User(name: "Seba",
+    User(image: "sebaLogo", name: "Seba",
          lastname: "Rojas",
          username: "seba", email: "sebarojas@example.com",
          address: "AV gatorade 123",
@@ -22,7 +22,7 @@ var users: [User] = [
          ],
          services: [], role: Role.admin, state: UserState.active
         ),
-    User(name: "apple",
+    User(image: "appleManLogo", name: "apple",
          lastname: "man",
          username: "apple-man", email: "apple-man@example.com",
          address: "AV manzana 999",
@@ -34,7 +34,7 @@ var users: [User] = [
          ],
          services: [], role: Role.admin, state: UserState.active
         ),
-    User(name: "Candela",
+    User(image: "candeLogo", name: "Candela",
          lastname: "S",
          username: "cande", email: "cande@example.com",
          address: "AV bb 290",

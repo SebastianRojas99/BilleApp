@@ -9,6 +9,7 @@ import Foundation
 
 struct User:Hashable,Codable,Identifiable{
     var id: UUID = .init()
+    var image: String
     var name:String
     var lastname:String
     var username:String
