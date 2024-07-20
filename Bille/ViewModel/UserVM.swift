@@ -72,6 +72,17 @@ class UserVM{
         // Usuario no encontrado o contraseña no coincide
         return false
     }
+    func logout(){
+        image = ""
+        username = ""
+        name = ""
+        lastname = ""
+        address = ""
+        birthday = Date()
+        amount = 0
+        userCards = []
+        
+    }
 
     func register(){
         
