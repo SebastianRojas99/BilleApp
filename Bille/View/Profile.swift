@@ -48,7 +48,7 @@ struct Profile: View {
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .foregroundStyle(isDarkMode ? .white : .black)
                 .navigationDestination(isPresented: $close){
-                    RegisterModal()
+                    ContentView()
                         .navigationBarBackButtonHidden(true)
                 }
                 
