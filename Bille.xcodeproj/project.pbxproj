@@ -16,6 +16,8 @@
 		962269762C1E72F100655D4B /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962269752C1E72F100655D4B /* UserCredentials.swift */; };
 		962269782C1E76B900655D4B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962269772C1E76B900655D4B /* LoginView.swift */; };
 		9628BEB52C4E71020002B392 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9628BEB42C4E71020002B392 /* Transaction.swift */; };
+		9628BEB82C4E7D6D0002B392 /* BilleDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9628BEB62C4E7D6C0002B392 /* BilleDB.xcdatamodeld */; };
+		9628BEBA2C4E81C00002B392 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9628BEB92C4E81C00002B392 /* Persistance.swift */; };
 		962B36DB2C2A1C5400648C37 /* ServicesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B36DA2C2A1C5400648C37 /* ServicesVM.swift */; };
 		96556FBD2C1FEEB9003A5C05 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96556FBC2C1FEEB9003A5C05 /* HomeScreen.swift */; };
 		966462EE2C2092F60010C414 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966462ED2C2092F60010C414 /* Currency.swift */; };
@@ -53,6 +55,8 @@
 		962269752C1E72F100655D4B /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
 		962269772C1E76B900655D4B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9628BEB42C4E71020002B392 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		9628BEB72C4E7D6D0002B392 /* BilleDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BilleDB.xcdatamodel; sourceTree = "<group>"; };
+		9628BEB92C4E81C00002B392 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		962B36DA2C2A1C5400648C37 /* ServicesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesVM.swift; sourceTree = "<group>"; };
 		96556FBC2C1FEEB9003A5C05 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		966462ED2C2092F60010C414 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -148,11 +152,13 @@
 			isa = PBXGroup;
 			children = (
 				96B339B82C1D34EE00B910A5 /* User.swift */,
+				9628BEB62C4E7D6C0002B392 /* BilleDB.xcdatamodeld */,
 				966462ED2C2092F60010C414 /* Currency.swift */,
 				967E41B42C21B696000043FE /* Card.swift */,
 				96C824A32C275E8B009A62F7 /* Services.swift */,
 				96D1A65D2C36B33C00080A64 /* Category.swift */,
 				9628BEB42C4E71020002B392 /* Transaction.swift */,
+				9628BEB92C4E81C00002B392 /* Persistance.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				96C824A42C275E8B009A62F7 /* Services.swift in Sources */,
 				961F2F4D2C21E0A000D83602 /* CreditCardTest.swift in Sources */,
 				96B339A52C1D306800B910A5 /* BilleApp.swift in Sources */,
+				9628BEB82C4E7D6D0002B392 /* BilleDB.xcdatamodeld in Sources */,
 				966462EE2C2092F60010C414 /* Currency.swift in Sources */,
 				96556FBD2C1FEEB9003A5C05 /* HomeScreen.swift in Sources */,
 				967D07C02C4173910042215D /* ServicesMenu.swift in Sources */,
@@ -313,6 +320,7 @@
 				967E41B52C21B696000043FE /* Card.swift in Sources */,
 				966462F02C2095E80010C414 /* CurrencyVM.swift in Sources */,
 				96D1A65E2C36B33C00080A64 /* Category.swift in Sources */,
+				9628BEBA2C4E81C00002B392 /* Persistance.swift in Sources */,
 				96C367692C210FDC00988460 /* CurrencyMenuTest.swift in Sources */,
 				962269782C1E76B900655D4B /* LoginView.swift in Sources */,
 				967E41B72C21C650000043FE /* DatabaseHardcoded.swift in Sources */,
@@ -555,6 +563,20 @@
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		9628BEB62C4E7D6C0002B392 /* BilleDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9628BEB72C4E7D6D0002B392 /* BilleDB.xcdatamodel */,
+			);
+			currentVersion = 9628BEB72C4E7D6D0002B392 /* BilleDB.xcdatamodel */;
+			name = BilleDB.xcdatamodeld;
+			path = /Users/seba/Desktop/Mobile/BilleApp/Bille/Model/BilleDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 96B339992C1D306800B910A5 /* Project object */;
 }
