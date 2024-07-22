@@ -9,14 +9,30 @@ import SwiftUI
 
 struct SendView: View {
     @Environment(UserVM.self) private var userVM
+    @State  var username:String = ""
+    @State  var money:String = ""
     var body: some View {
         NavigationStack{
             VStack{
                 Text("Transfer")
                     .font(.largeTitle)
                 Text("your amount \(userVM.amount ?? 0)")
-                //TextField()
-            }.navigationTitle("Send wall")
+                TextField("Enter the username",text: $username)
+                    .textFieldStyle(.roundedBorder).font(.title3)
+                TextField("Enter the amount",text: $money)
+                    .textFieldStyle(.roundedBorder).font(.title3).keyboardType(.numberPad)
+                Button{
+                    userVM.send(username, money:Int(money) ?? 0 )
+                }label: {
+                    Text("Send")
+                }
+                    .padding()
+                    .bold()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                Spacer()
+            }.navigationTitle("Send wall").padding()
         }
     }
 }
