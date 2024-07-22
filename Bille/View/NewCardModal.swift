@@ -55,7 +55,7 @@ struct NewCardModal: View {
                 .padding(.bottom, 10)
             
             Button(action: {
-                let newCard = Card(name: cardHolderName, typeCard: cardType, number: cardNumber, expiryDate: expiryDate, cvv: cvv, credit: 1000000.0)
+                let newCard = CardTest(name: cardHolderName, typeCard: cardType, number: cardNumber, expiryDate: expiryDate, cvv: cvv, credit: 1000000.0)
                 userVM.addCard(newCard, userVM.username ?? "")
                 cardHolderName = ""
                 cardType = ""

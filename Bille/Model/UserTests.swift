@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User:Hashable,Codable,Identifiable{
+struct UserTests:Hashable,Codable,Identifiable{
     var id: UUID = .init()
     var image: String
     var name:String
@@ -18,8 +18,8 @@ struct User:Hashable,Codable,Identifiable{
     var birthday:Date
     var password:String
     var accountAmount:Int
-    var cards:[Card]
-    var services:[Services]
+    var cards:[CardTest]
+    var services:[ServicesTests]
     
     var role:Role
     var state:UserState

@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Services:Hashable,Codable{
+struct ServicesTests:Hashable,Codable{
     var name: String
-    var provider: User
+    var provider: UserTests
     var description: String
     var price: Double
     

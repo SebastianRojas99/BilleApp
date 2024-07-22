@@ -18,8 +18,8 @@ class UserVM{
     var birthday:Date = DateFormatter().date(from: "01/15/2021") ?? Date()
     var username:String?
     var amount:Int?
-    var userList: [User] = []
-    var userCards:[Card] = []
+    var userList: [UserTests] = []
+    var userCards:[CardTest] = []
     
     
     
@@ -31,7 +31,7 @@ class UserVM{
         }
     }
     
-    func addCard(_ card:Card,_ username:String){
+    func addCard(_ card:CardTest,_ username:String){
         if users.first(where: {($0.username == username || $0.email == username)}) != nil{
             userCards.append(card)
         }else{
@@ -39,7 +39,7 @@ class UserVM{
         }
     }
     
-    func deleteCard(_ card: Card, _ username: String) {
+    func deleteCard(_ card: CardTest, _ username: String) {
         // Verificar si el usuario existe
         if users.first(where: { $0.username == username || $0.email == username }) != nil {
             // Encontrar el índice de la tarjeta en el array

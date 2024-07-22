@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Transaction:Codable,Hashable,Identifiable{
+struct TransactionTest:Codable,Hashable,Identifiable{
     var id: UUID = .init()
     var amount:Int
     var date:Date
