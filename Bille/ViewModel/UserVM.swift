@@ -97,6 +97,15 @@ class UserVM{
            
     }
     
+    func send(_ email:String, money:Int){
+        if var users =  users.first(where: {($0.username == email || $0.email == email)}){
+            amount! -= money
+            users.accountAmount += money
+        }else{
+            print("error de monto")
+        }
+    }
+    
     func getUser() -> String?{
             return username
         }

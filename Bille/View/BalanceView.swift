@@ -10,6 +10,7 @@ import SwiftUI
 struct BalanceView: View {
     @Environment(UserVM.self) private var userVM
     @State var currencies:CurrencyVM?
+    @State var isPresented:Bool = false
     var body: some View {
         VStack(alignment:.center){
             Text("Total balance")
@@ -27,7 +28,7 @@ struct BalanceView: View {
             
             HStack {
                 Button {
-                    // Acción para el botón de Transfer
+                    
                 } label: {
                     HStack {
                         Image(systemName: "arrow.up.circle")
@@ -44,7 +45,7 @@ struct BalanceView: View {
                 }
                 
                 Button {
-                    //
+                    isPresented = true
                 } label: {
                     HStack {
                         Image(systemName: "arrow.down.circle")
@@ -58,6 +59,9 @@ struct BalanceView: View {
                     .background(Color.pink)
                     .clipShape(Capsule())
                     .shadow(radius: 10)
+                    .navigationDestination(isPresented: $isPresented){
+                        SendView().environment(userVM)
+                    }
                 }
             }
             .padding(.top, 5)
