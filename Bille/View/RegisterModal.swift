@@ -13,8 +13,7 @@ struct RegisterModal: View {
     @Environment(UserVM.self) private var userVM
     @Environment(CardVM.self) private var cardVM
     @State private var isLogged: Bool = false
-    @State private var showContentView: Bool = false
-    @State var degreesRotating = 0.0
+    @State private var showContentView: Bool = false    
     
     var body: some View {
         ZStack {
@@ -23,7 +22,7 @@ struct RegisterModal: View {
                     .resizable()
                     .scaledToFit()
                     .clipped()
-                    .overlay(Color.black.opacity(0.3)) // Añade una capa oscura semitransparente si quieres oscurecer la imagen
+                    .overlay(Color.black.opacity(0.7)) // Añade una capa oscura semitransparente si quieres oscurecer la imagen
                     .ignoresSafeArea()
             
             VStack {
@@ -77,7 +76,6 @@ struct RegisterModal: View {
                 
                 Button {
                     isPresented = true
-                    degreesRotating = 0.0
                 } label: {
                     Text("Get Started")
                         .font(.title2)

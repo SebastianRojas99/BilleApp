@@ -17,3 +17,4 @@ struct Currency:Hashable,Codable{
 struct CoinGeckoResponse: Codable {
     var rates: [String: Currency]
 }
+

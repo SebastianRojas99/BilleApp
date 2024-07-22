@@ -32,15 +32,8 @@ struct Dashboard: View {
                             } label: {
                                 Image(systemName: isDarkMode ? "moon.stars" : "sun.max")
                                     .font(.largeTitle)
-                                    .foregroundStyle(isDarkMode ? .brown.opacity(0.7) : .yellow)
-                            }
-                            NavigationLink {
-                                CreditCards().environment(userVM)
-                            } label: {
-                                Image(systemName: "creditcard.fill")
-                                    .font(.largeTitle)
-                                    .foregroundStyle(isDarkMode ? .brown.opacity(0.7) : .yellow)
-                            }
+                                    .foregroundStyle(isDarkMode ? .gray.opacity(0.6) : .yellow)
+                            }                            
                         }
                         .padding(.horizontal)
                         
