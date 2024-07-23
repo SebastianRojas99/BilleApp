@@ -9,28 +9,28 @@
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="userId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="relationToCardService" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CardService" inverseName="relationToCard" inverseEntity="CardService"/>
-        <relationship name="relationToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="relationToCard" inverseEntity="User"/>
+        <relationship name="relationToCardService" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardService" inverseName="relationToCard" inverseEntity="CardService"/>
+        <relationship name="relationToUser" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="relationToCard" inverseEntity="User"/>
     </entity>
     <entity name="CardService" representedClassName="CardService" syncable="YES" codeGenerationType="class">
         <attribute name="idCard" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="idService" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="relationToCard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="relationToCardService" inverseEntity="Card"/>
-        <relationship name="relationToService" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Service" inverseName="relationToService" inverseEntity="Service"/>
+        <relationship name="relationToCard" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="relationToCardService" inverseEntity="Card"/>
+        <relationship name="relationToService" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Service" inverseName="relationToService" inverseEntity="Service"/>
     </entity>
     <entity name="Service" representedClassName="Service" syncable="YES" codeGenerationType="class">
         <attribute name="descriptionService" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="String"/>
-        <relationship name="relationToService" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CardService" inverseName="relationToService" inverseEntity="CardService"/>
+        <relationship name="relationToService" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardService" inverseName="relationToService" inverseEntity="CardService"/>
     </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="userId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="relationToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="relationToTransaction" inverseEntity="User"/>
+        <relationship name="relationToUser" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="relationToTransaction" inverseEntity="User"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="accountamount" optional="YES" attributeType="String"/>
