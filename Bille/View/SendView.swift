@@ -17,10 +17,13 @@ struct SendView: View {
                 Text("Transfer")
                     .font(.largeTitle)
                 Text("your amount \(userVM.amount ?? 0)")
-                TextField("Enter the username",text: $username)
-                    .textFieldStyle(.roundedBorder).font(.title3)
-                TextField("Enter the amount",text: $money)
-                    .textFieldStyle(.roundedBorder).font(.title3).keyboardType(.numberPad)
+                VStack{
+                    TextField("Enter the username",text: $username)
+                        .textFieldStyle(.roundedBorder).font(.title3)
+                    TextField("Enter the amount",text: $money)
+                        .textFieldStyle(.roundedBorder).font(.title3).keyboardType(.numberPad)
+                }.padding()
+                
                 Button{
                     userVM.send(username, money:Int(money) ?? 0 )
                 }label: {

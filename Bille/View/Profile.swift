@@ -12,7 +12,6 @@ struct Profile: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @State private var close:Bool = false
     var body: some View {
-        
         NavigationStack{
             Image(uservm.image)
                 .resizable()
@@ -34,7 +33,7 @@ struct Profile: View {
                 .foregroundStyle(.gray)
             
             Button{
-                uservm.logout()
+                //uservm.logout()
                 close = true
             }label: {
                 HStack{

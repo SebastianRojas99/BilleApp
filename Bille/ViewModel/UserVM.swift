@@ -18,6 +18,7 @@ class UserVM{
     var birthday:Date = DateFormatter().date(from: "01/15/2021") ?? Date()
     var username:String?
     var amount:Int?
+    var sendMoneyTest:Int = 0
     var userList: [UserTests] = []
     var userCards:[CardTest] = []
     
@@ -99,8 +100,13 @@ class UserVM{
     
     func send(_ email:String, money:Int){
         if var users =  users.first(where: {($0.username == email || $0.email == email)}){
-            amount! -= money
-            users.accountAmount += money
+            sendMoneyTest = money
+            if sendMoneyTest<=amount!{
+                amount! -= sendMoneyTest
+            }else{
+                print("dinero insuficiente")
+            }            
+            users.accountAmount += sendMoneyTest
         }else{
             print("error de monto")
         }
