@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @Environment(\.dismiss.self) var dismiss
-    @Environment(UserVM.self) var userVM
+    @Environment(UserVMT.self) var userVM
     @State private var username: String = ""
     @State private var password: String = ""
     @Binding var isLogged: Bool

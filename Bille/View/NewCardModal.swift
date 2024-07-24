@@ -13,8 +13,8 @@ struct NewCardModal: View {
     @State private var expiryDate: String = ""
     @State private var cvv: String = ""
     @State private var cardType: String = ""
-    @Environment(UserVM.self) private var userVM
-    @Environment(CardVM.self)  var cardVM
+    @Environment(UserVMT.self) private var userVM
+    @Environment(CardVMT.self)  var cardVM
     var body: some View {
         VStack {
             VStack(alignment: .leading) {

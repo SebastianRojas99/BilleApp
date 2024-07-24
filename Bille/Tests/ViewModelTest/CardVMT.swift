@@ -9,7 +9,7 @@ import Foundation
 import Observation
 
 @Observable
-class CardVM{
+class CardVMT{
     
     
     

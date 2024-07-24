@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @Environment(UserVM.self) var userVM
+    @Environment(UserVMT.self) var userVM
     @State var name:String = ""
     @State var lastname:String = ""
     @State var birthday:String = ""
@@ -186,5 +186,5 @@ struct RegisterView: View {
 }
 
 #Preview {
-    RegisterView().environment(UserVM())
+    RegisterView().environment(UserVMT())
 }

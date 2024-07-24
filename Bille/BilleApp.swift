@@ -10,8 +10,8 @@ import SwiftUI
 @main
 struct BilleApp: App {
     @AppStorage("hasSeenOnboarding") var hasSeenOnboarding: Bool = false
-    @State var userVM = UserVM()
-    @State var cardVM = CardVM()
+    @State var userVM = UserVMT()
+    @State var cardVM = CardVMT()
     
     var body: some Scene {
         WindowGroup {

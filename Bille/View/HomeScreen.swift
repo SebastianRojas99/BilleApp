@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    @Environment(UserVM.self) private var userVM
-    @Environment(CardVM.self) private var cardVM
+    @Environment(UserVMT.self) private var userVM
+    @Environment(CardVMT.self) private var cardVM
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @State private var selectedCategory = "Dashboard"
     var body: some View{

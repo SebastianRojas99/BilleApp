@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SendView: View {
-    @Environment(UserVM.self) private var userVM
+    @Environment(UserVMT.self) private var userVM
     @State  var username:String = ""
     @State  var money:String = ""
     var body: some View {
@@ -41,5 +41,5 @@ struct SendView: View {
 }
 
 #Preview {
-    SendView().environment(UserVM())
+    SendView().environment(UserVMT())
 }

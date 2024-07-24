@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CreditCards: View {
-    @Environment(UserVM.self)  var userVM
-    @Environment(CardVM.self)  var cardVM
+    @Environment(UserVMT.self)  var userVM
+    @Environment(CardVMT.self)  var cardVM
     @Environment(\.dismiss.self) var dismiss
     @State private var selectedCard: CardTest?
     @State private var isShow: Bool = false
