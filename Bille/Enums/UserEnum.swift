@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum state: Int, Codable {
+enum state: Int16, Codable {
     case active = 1
     case inactive = 2
     case banned = 3
 }
 
-enum role: Int, Codable {
+enum role: Int16, Codable {
     case user = 1
     case admin = 2
     case customer = 3
