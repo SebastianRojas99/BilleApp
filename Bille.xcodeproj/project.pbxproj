@@ -20,6 +20,8 @@
 		9628BEB82C4E7D6D0002B392 /* BilleDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9628BEB62C4E7D6C0002B392 /* BilleDB.xcdatamodeld */; };
 		9628BEBA2C4E81C00002B392 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9628BEB92C4E81C00002B392 /* Persistance.swift */; };
 		962B36DB2C2A1C5400648C37 /* ServicesVMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B36DA2C2A1C5400648C37 /* ServicesVMT.swift */; };
+		963576FC2C511EE600933A88 /* UserEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963576FB2C511EE600933A88 /* UserEnum.swift */; };
+		963576FE2C5132C500933A88 /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963576FD2C5132C500933A88 /* ErrorEnum.swift */; };
 		9636D5582C4E9DF800F859D4 /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9636D5572C4E9DF800F859D4 /* SendView.swift */; };
 		96556FBD2C1FEEB9003A5C05 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96556FBC2C1FEEB9003A5C05 /* HomeScreen.swift */; };
 		966462EE2C2092F60010C414 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966462ED2C2092F60010C414 /* Currency.swift */; };
@@ -61,6 +63,8 @@
 		9628BEB72C4E7D6D0002B392 /* BilleDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BilleDB.xcdatamodel; sourceTree = "<group>"; };
 		9628BEB92C4E81C00002B392 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		962B36DA2C2A1C5400648C37 /* ServicesVMT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesVMT.swift; sourceTree = "<group>"; };
+		963576FB2C511EE600933A88 /* UserEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEnum.swift; sourceTree = "<group>"; };
+		963576FD2C5132C500933A88 /* ErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
 		9636D5572C4E9DF800F859D4 /* SendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
 		96556FBC2C1FEEB9003A5C05 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		966462ED2C2092F60010C414 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -132,6 +136,15 @@
 			path = Credentials;
 			sourceTree = "<group>";
 		};
+		963576FA2C511EC600933A88 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				963576FB2C511EE600933A88 /* UserEnum.swift */,
+				963576FD2C5132C500933A88 /* ErrorEnum.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		96B339982C1D306800B910A5 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +164,7 @@
 		96B339A32C1D306800B910A5 /* Bille */ = {
 			isa = PBXGroup;
 			children = (
+				963576FA2C511EC600933A88 /* Enums */,
 				960126E92C5117A4008A1E83 /* ViewModel */,
 				962269742C1E72DF00655D4B /* Credentials */,
 				96B339B72C1D345C00B910A5 /* Tests */,
@@ -334,6 +348,7 @@
 				96B339A52C1D306800B910A5 /* BilleApp.swift in Sources */,
 				9628BEB82C4E7D6D0002B392 /* BilleDB.xcdatamodeld in Sources */,
 				966462EE2C2092F60010C414 /* Currency.swift in Sources */,
+				963576FE2C5132C500933A88 /* ErrorEnum.swift in Sources */,
 				96556FBD2C1FEEB9003A5C05 /* HomeScreen.swift in Sources */,
 				967D07C02C4173910042215D /* ServicesMenu.swift in Sources */,
 				962269762C1E72F100655D4B /* UserCredentials.swift in Sources */,
@@ -351,6 +366,7 @@
 				962117562C3B5858000EF67B /* CategoryVM.swift in Sources */,
 				9604EA0D2C3CB04400C6D9C4 /* Dashboard.swift in Sources */,
 				962B36DB2C2A1C5400648C37 /* ServicesVMT.swift in Sources */,
+				963576FC2C511EE600933A88 /* UserEnum.swift in Sources */,
 				961F2F4F2C2258F100D83602 /* CreditCards.swift in Sources */,
 				966AA86A2C247FB30045871E /* NewCardModal.swift in Sources */,
 				9636D5582C4E9DF800F859D4 /* SendView.swift in Sources */,

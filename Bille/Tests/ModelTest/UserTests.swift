@@ -21,18 +21,7 @@ struct UserTests:Hashable,Codable,Identifiable{
     var cards:[CardTest]
     var services:[ServicesTests]
     
-    var role:Role
-    var state:UserState
+    var role:role
+    var state:state
 }
 
-enum UserState: Int, Codable {
-    case active = 1
-    case inactive = 2
-    case banned = 3
-}
-
-enum Role: Int, Codable {
-    case user = 1
-    case admin = 2
-    case customer = 3
-}

@@ -20,7 +20,7 @@ var users: [UserTests] = [
             CardTest(name: "S MARQUEZ ROJAS".lowercased(), typeCard: "MasterCard", number: "2550 3030 9494 1112", expiryDate: "11/28", cvv: "333", credit: 1000000),
             CardTest(name: "S MARQUEZ ROJAS".lowercased(), typeCard: "Visa", number: "4550 3031 9494 1112", expiryDate: "11/30", cvv: "222", credit: 1000000),
          ],
-         services: [], role: Role.admin, state: UserState.active
+         services: [], role: role.admin, state: state.active
         ),
     UserTests(image: "appleManLogo", name: "apple",
          lastname: "man",
@@ -32,7 +32,7 @@ var users: [UserTests] = [
             CardTest(name: "APPLE-MAN".lowercased(), typeCard: "MasterCard", number: "2550 3030 9494 3232", expiryDate: "11/28", cvv: "333", credit: 1000000),
             CardTest(name: "APPLE-MAN".lowercased(), typeCard: "Visa", number: "4550 3031 9494 5723", expiryDate: "11/30", cvv: "222", credit: 1000000),
          ],
-         services: [], role: Role.admin, state: UserState.active
+         services: [], role: role.admin, state: state.active
         ),
     UserTests(image: "candeLogo", name: "Candela",
          lastname: "S",
@@ -44,7 +44,7 @@ var users: [UserTests] = [
             CardTest(name: "CANDELA S".lowercased(), typeCard: "MasterCard", number: "4411 6585 2234 1238", expiryDate: "11/28", cvv: "333", credit: 1000000),
             CardTest(name: "CANDELA S".lowercased(), typeCard: "Visa", number: "2221 4367 9494 9984", expiryDate: "11/30", cvv: "222", credit: 1000000),
          ],
-         services: [], role: Role.user, state: UserState.active
+         services: [], role: role.user, state: state.active
         ),
     
 ]
