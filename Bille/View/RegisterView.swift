@@ -20,6 +20,7 @@ struct RegisterView: View {
     @State var isActive: Bool = false
     @State var registrationMessage: String = ""
     @State var isRegistered: Bool = false
+    @State var passwordPassed:Bool = false
     
     
     var body: some View {
@@ -48,7 +49,8 @@ struct RegisterView: View {
                                     .padding()
                                     .background(.pink)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    .maxLength(text: $email, length: 30, show: true)
+                                    .minLength(text: $name, length: 2, show: passwordPassed)
+                                    .maxLength(text: $name, length: 15, show: false)
                             }.padding(.horizontal, 5)
                             
                             VStack(alignment: .leading) {
@@ -61,7 +63,7 @@ struct RegisterView: View {
                                     .padding()
                                     .background(.pink)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    .maxLength(text: $email, length: 30, show: true)
+                                    .maxLength(text: $lastname, length: 30, show: true)
                             }.padding(.horizontal, 5)
                         }.padding(.top, 20)
                         
@@ -76,6 +78,7 @@ struct RegisterView: View {
                                     .padding()
                                     .background(.pink)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .maxLength(text: $address, length: 20, show: false)
                             }.padding(.horizontal, 5)
                             
                             VStack(alignment: .leading) {
@@ -87,6 +90,7 @@ struct RegisterView: View {
                                     .padding()
                                     .background(.pink)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    
                             }.padding(.horizontal, 5)
                         }.padding(.top, 10)
                         
@@ -118,6 +122,7 @@ struct RegisterView: View {
                                 .padding()
                                 .background(.pink)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .maxLength(text: $username, length: 12, show: false)
                             
                             HStack {
                                 Text("Password")
@@ -130,6 +135,8 @@ struct RegisterView: View {
                                 .padding()
                                 .background(.pink)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .minLength(text: $password, length: 3, show: passwordPassed)
+                                .maxLength(text: $password, length: 5, show: false)
                         }.padding().foregroundStyle(.gray)
                         
                         HStack {
