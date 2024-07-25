@@ -10,8 +10,8 @@ import SwiftUI
 struct RegisterModal: View {
     @State private var pulsate: Bool = false
     @State private var isPresented: Bool = false
-    @Environment(UserVMT.self) private var userVM
-    @Environment(CardVMT.self) private var cardVM
+    @Environment(UserVM.self) private var userVM
+    @Environment(CardVM.self) private var cardVM
     @State private var isLogged: Bool = false
     @State private var showContentView: Bool = false    
     

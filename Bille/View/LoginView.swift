@@ -9,7 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     @Environment(\.dismiss.self) var dismiss
-    @Environment(UserVMT.self) var userVM
+    @Environment(UserVM.self) var userVM
+    @Environment(\.managedObjectContext) private var context
     @State private var username: String = ""
     @State private var password: String = ""
     @Binding var isLogged: Bool
@@ -81,7 +82,9 @@ struct LoginView: View {
                 VStack{
                     
                     Button{
-                        if userVM.validation(username, password){
+                        userVM.username = username
+                        userVM.password = password
+                        if userVM.login(username: userVM.username, password: userVM.password, context: context){
                             isLogged = true
                             username = ""
                             password = ""

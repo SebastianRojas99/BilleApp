@@ -18,3 +18,4 @@ enum role: Int16, Codable {
     case admin = 2
     case customer = 3
 }
+
