@@ -140,31 +140,40 @@ struct RegisterView: View {
                         
                         VStack {
                             Button {
-                                userVM.name = name
-                                userVM.lastname = lastname
-                                userVM.username = username
-                                userVM.email = email
-                                userVM.address = address
-                                userVM.password = password
-                                userVM.birthday = birthday
-                                userVM.register(context: context)
-                                registrationMessage = userVM.isUserRegistered(username: username, context: context) ? "User already registered" : "Registration successful"
-                                isRegistered = !registrationMessage.contains("already")
-                                
-                            } label: {
-                                HStack {
-                                    Text("Register now!").bold()
-                                    Image(systemName: "arrow.right").imageScale(.large).bold()
-                                }
-                                .font(.title2)
-                                .padding(22)
-                                .frame(maxWidth: .infinity)
-                                .background(.pink)
-                                .clipShape(RoundedRectangle(cornerRadius: 15))
-                                .padding()
-                                .foregroundStyle(.white)
-                            }
+                                            userVM.name = name
+                                            userVM.lastname = lastname
+                                            userVM.username = username
+                                            userVM.email = email
+                                            userVM.address = address
+                                            userVM.password = password
+                                            userVM.birthday = birthday
+                                            
+                                            if userVM.isUserRegistered(username: username, context: context) {
+                                                registrationMessage = "User already registered"
+                                                isRegistered = true
+                                            } else {
+                                                userVM.register(context: context)
+                                                registrationMessage = "Registration successful"
+                                                isRegistered = false
+                                            }
+                                        } label: {
+                                            HStack {
+                                                Text("Register now!").bold()
+                                                Image(systemName: "arrow.right").imageScale(.large).bold()
+                                            }
+                                            .font(.title2)
+                                            .padding(22)
+                                            .frame(maxWidth: .infinity)
+                                            .background(.pink)
+                                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                                            .padding()
+                                            .foregroundStyle(.white)
+                                        }                                        
+                                        Text(registrationMessage)
+                                            .foregroundStyle(isRegistered ? .red : .green)
                         }.padding(.bottom, 30)
+                            
+                        
                     }
                     .padding(.horizontal, 10)
                 }
