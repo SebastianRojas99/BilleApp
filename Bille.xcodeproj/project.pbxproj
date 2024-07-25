@@ -49,6 +49,7 @@
 		96D1A65E2C36B33C00080A64 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1A65D2C36B33C00080A64 /* Category.swift */; };
 		96F698652C496E6300372DE6 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F698642C496E6300372DE6 /* DateUtils.swift */; };
 		96FB810B2C528A38006D81A6 /* CardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB810A2C528A37006D81A6 /* CardVM.swift */; };
+		96FB810D2C52979E006D81A6 /* TextFieldsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB810C2C52979E006D81A6 /* TextFieldsUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		96D1A65D2C36B33C00080A64 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		96F698642C496E6300372DE6 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		96FB810A2C528A37006D81A6 /* CardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVM.swift; sourceTree = "<group>"; };
+		96FB810C2C52979E006D81A6 /* TextFieldsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 			children = (
 				967D07BB2C4024090042215D /* ColorUtils.swift */,
 				96F698642C496E6300372DE6 /* DateUtils.swift */,
+				96FB810C2C52979E006D81A6 /* TextFieldsUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				963576FC2C511EE600933A88 /* UserEnum.swift in Sources */,
 				961F2F4F2C2258F100D83602 /* CreditCards.swift in Sources */,
 				966AA86A2C247FB30045871E /* NewCardModal.swift in Sources */,
+				96FB810D2C52979E006D81A6 /* TextFieldsUtils.swift in Sources */,
 				9636D5582C4E9DF800F859D4 /* SendView.swift in Sources */,
 				96B339B92C1D34EE00B910A5 /* UserTests.swift in Sources */,
 			);

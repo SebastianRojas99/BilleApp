@@ -48,6 +48,7 @@ struct RegisterView: View {
                                     .padding()
                                     .background(.pink)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .maxLength(text: $email, length: 30, show: true)
                             }.padding(.horizontal, 5)
                             
                             VStack(alignment: .leading) {
@@ -60,6 +61,7 @@ struct RegisterView: View {
                                     .padding()
                                     .background(.pink)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .maxLength(text: $email, length: 30, show: true)
                             }.padding(.horizontal, 5)
                         }.padding(.top, 20)
                         
@@ -93,6 +95,7 @@ struct RegisterView: View {
                                 Text("Email")
                                     .font(.title2)
                                     .foregroundStyle(.gray)
+                                    
                                 Spacer()
                             }
                             TextField("", text: $email, prompt: Text("Enter email").foregroundStyle(.white))
@@ -101,6 +104,7 @@ struct RegisterView: View {
                                 .padding()
                                 .background(.pink)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .maxLength(text: $email, length: 50, show: false)
                             
                             HStack {
                                 Text("Username")
