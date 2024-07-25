@@ -90,7 +90,7 @@ struct RegisterView: View {
                                     .padding()
                                     .background(.pink)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    
+                                
                             }.padding(.horizontal, 5)
                         }.padding(.top, 10)
                         
@@ -99,7 +99,7 @@ struct RegisterView: View {
                                 Text("Email")
                                     .font(.title2)
                                     .foregroundStyle(.gray)
-                                    
+                                
                                 Spacer()
                             }
                             TextField("", text: $email, prompt: Text("Enter email").foregroundStyle(.white))
@@ -151,39 +151,43 @@ struct RegisterView: View {
                         
                         VStack {
                             Button {
-                                            userVM.name = name
-                                            userVM.lastname = lastname
-                                            userVM.username = username
-                                            userVM.email = email
-                                            userVM.address = address
-                                            userVM.password = password
-                                            userVM.birthday = birthday
-                                            
-                                            if userVM.isUserRegistered(username: username, context: context) {
-                                                registrationMessage = "User already registered"
-                                                isRegistered = true
-                                            } else {
-                                                userVM.register(context: context)
-                                                registrationMessage = "Registration successful"
-                                                isRegistered = false
-                                            }
-                                        } label: {
-                                            HStack {
-                                                Text("Register now!").bold()
-                                                Image(systemName: "arrow.right").imageScale(.large).bold()
-                                            }
-                                            .font(.title2)
-                                            .padding(22)
-                                            .frame(maxWidth: .infinity)
-                                            .background(.pink)
-                                            .clipShape(RoundedRectangle(cornerRadius: 15))
-                                            .padding()
-                                            .foregroundStyle(.white)
-                                        }                                        
-                                        Text(registrationMessage)
-                                            .foregroundStyle(isRegistered ? .red : .green)
+                                userVM.name = name
+                                userVM.lastname = lastname
+                                userVM.username = username
+                                userVM.email = email
+                                userVM.address = address
+                                userVM.password = password
+                                userVM.birthday = birthday
+                                
+                                if passwordPassed == true{
+                                    if userVM.isUserRegistered(username: username, context: context) {
+                                        registrationMessage = "User already registered"
+                                        isRegistered = true
+                                    } else {
+                                        userVM.register(context: context)
+                                        registrationMessage = "Registration successful"
+                                        isRegistered = false
+                                    }
+                                }
+                                
+                                
+                            } label: {
+                                HStack {
+                                    Text("Register now!").bold()
+                                    Image(systemName: "arrow.right").imageScale(.large).bold()
+                                }
+                                .font(.title2)
+                                .padding(22)
+                                .frame(maxWidth: .infinity)
+                                .background(.pink)
+                                .clipShape(RoundedRectangle(cornerRadius: 15))
+                                .padding()
+                                .foregroundStyle(.white)
+                            }
+                            Text(registrationMessage)
+                                .foregroundStyle(isRegistered ? .red : .green)
                         }.padding(.bottom, 30)
-                            
+                        
                         
                     }
                     .padding(.horizontal, 10)
