@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Profile: View {
-    @Environment(UserVMT.self) private var uservm
+    @Environment(UserVM.self) private var uservm
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @State private var close:Bool = false
     var body: some View {

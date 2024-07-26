@@ -13,7 +13,7 @@ struct CreditCards: View {
     @Environment(UserVM.self)  var userVM
     @Environment(CardVM.self)  var cardVM
     @Environment(\.dismiss.self) var dismiss
-    @State private var selectedCard: CardTest?
+    //@State private var selectedCard: Card
     @State private var isShow: Bool = false
     
     var body: some View {

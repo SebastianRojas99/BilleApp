@@ -23,6 +23,8 @@ class UserVM{
     var password:String = ""
     var role:role = .user
     var state:state = .active
+    var loginMessage:String = ""
+    var isLogged: Bool = false
     
     func isUserRegistered(username: String, context: NSManagedObjectContext) -> Bool {
         let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
@@ -62,13 +64,24 @@ class UserVM{
         }
     }
     
-    func login(username:String,password:String,context:NSManagedObjectContext)->Bool{
-        let loggedUser = User(context: context)
-        
-        if loggedUser.username == username && loggedUser.password == password{
-            return true
+    func login(username: String, password: String, context: NSManagedObjectContext) {
+            let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "username == %@ AND password == %@", username, password) //validation for login
+            
+            do {
+                let users = try context.fetch(fetchRequest)
+                if users.isEmpty {
+                    loginMessage = "Invalid username or password"
+                    isLogged = false
+                } else {
+                    loginMessage = "Login successful"
+                    isLogged = true
+                    print("logged")
+                }
+            } catch {
+                loginMessage = "Error: \(error.localizedDescription)"
+                isLogged = false
+            }
         }
-        return false
-    }
 
 }

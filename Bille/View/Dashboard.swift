@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct Dashboard: View {
-    @Environment(UserVMT.self) private var userVM
-    @Environment(CardVMT.self) private var cardVM
+    @Environment(UserVM.self) private var userVM
+    @Environment(CardVM.self) private var cardVM
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @State private var selectedCategory = "Dashboard"
     
@@ -20,7 +20,7 @@ struct Dashboard: View {
                     VStack(alignment: .leading) {
                         HStack{
                             VStack(alignment: .leading) {
-                                Text("Welcome \(userVM.getUser()?.capitalized ?? "Invitado")!")
+                                Text("Welcome \(userVM.username)!")
                                     .foregroundColor(.gray)
                                 Text("Dashboard")
                                     .font(.largeTitle)

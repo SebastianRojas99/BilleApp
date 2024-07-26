@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BalanceView: View {
-    @Environment(UserVMT.self) private var userVM
+    @Environment(UserVM.self) private var userVM
     @State var currencies:CurrencyVM?
     @State var isPresented:Bool = false
     var body: some View {
@@ -19,7 +19,7 @@ struct BalanceView: View {
                 .frame(alignment: .center)
                 
                             
-            Text("$\(userVM.amount ?? 0)")
+            Text("$\(0)")
                 .font(.system(size:50))
                 .bold()
                 .frame(alignment: .center)
@@ -75,5 +75,5 @@ struct BalanceView: View {
 }
 
 #Preview {
-    BalanceView().environment(UserVMT())
+    BalanceView()
 }

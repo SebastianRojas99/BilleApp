@@ -82,13 +82,8 @@ struct LoginView: View {
                 VStack{
                     
                     Button{
-                        userVM.username = username
-                        userVM.password = password
-                        if userVM.login(username: userVM.username, password: userVM.password, context: context){
-                            isLogged = true
-                            username = ""
-                            password = ""
-                        }
+                        userVM.login(username: username, password: password, context: context)
+                        isLogged = userVM.isLogged
                     }label: {
                         HStack{
                             Text("Login").bold()
@@ -102,7 +97,9 @@ struct LoginView: View {
                         .clipShape(.rect(cornerRadius: 10))
                         .padding()
                         .foregroundStyle(.white)
-                    }.disabled(username == "" || password == "")
+                    }.disabled(username == "" || password == "").navigationDestination(isPresented: $isLogged){
+                        HomeScreen()
+                    }
                     
                 }
                 
