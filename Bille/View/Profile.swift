@@ -13,22 +13,22 @@ struct Profile: View {
     @State private var close:Bool = false
     var body: some View {
         NavigationStack{
-            Image(uservm.image)
+            Image(uservm.user?.image ?? "\(String(describing: uservm.user?.name))")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 150,height: 150)
                 .clipShape(Circle())
             HStack{
-                Text(uservm.name)
+                Text(uservm.user?.name ?? "")
                     .font(.largeTitle)
-                Text(uservm.lastname)
+                Text(uservm.user?.lastname ?? "")
                     .font(.largeTitle)
             }
                         
-            Text(uservm.address)
+            Text(uservm.user?.address ?? "")
                 .font(.title2)
                 .foregroundStyle(.gray)
-            Text("\(uservm.birthday.formatted(date: .numeric, time: .omitted))")
+            Text("\(uservm.user?.birthday!.formatted(date: .numeric, time: .omitted) ?? "No date available")")
                 .font(.title3)
                 .foregroundStyle(.gray)
             

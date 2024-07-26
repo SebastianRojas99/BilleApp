@@ -25,6 +25,7 @@ class UserVM{
     var state:state = .active
     var loginMessage:String = ""
     var isLogged: Bool = false
+    var user:User?
     
     func isUserRegistered(username: String, context: NSManagedObjectContext) -> Bool {
         let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
@@ -76,6 +77,7 @@ class UserVM{
                 } else {
                     loginMessage = "Login successful"
                     isLogged = true
+                    user = users.first
                     print("logged")
                 }
             } catch {
