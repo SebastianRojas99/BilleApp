@@ -25,6 +25,7 @@ class UserVM{
     var state:state = .active
     var loginMessage:String = ""
     var isLogged: Bool = false
+    var accountAmount:String = "0"
     var user:User?
     
     func isUserRegistered(username: String, context: NSManagedObjectContext) -> Bool {
@@ -56,6 +57,7 @@ class UserVM{
         newUser.birthday = birthday
         newUser.role = role.rawValue
         newUser.state = state.rawValue
+        newUser.accountamount = accountAmount
         
         do{
             try context.save()
