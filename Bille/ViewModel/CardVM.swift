@@ -19,4 +19,26 @@ class CardVM{
     var cvv:String = ""
     var credit:Double = 0.00
     var userId = UUID()
+    
+    func add(context:NSManagedObjectContext){
+        let newCard = Card(context:context)
+        
+        newCard.id = id
+        newCard.name = name
+        newCard.number = Int16(number)
+        newCard.type = type
+        newCard.expiryDate = expiryDate
+        newCard.cvv = cvv
+        newCard.credit = credit
+        newCard.userId = userId
+        
+        do{
+            try context.save()
+            print("tarjeta guardada")
+        }catch{
+            print("error al crear una tarjeta")
+        }
+        
+        
+    }
 }
