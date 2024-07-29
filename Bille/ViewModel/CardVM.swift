@@ -18,9 +18,8 @@ class CardVM{
     var expiryDate:String = ""
     var cvv:String = ""
     var credit:Double = 0.00
-    var userId = UUID()
     
-    func add(context:NSManagedObjectContext){
+    func add(context:NSManagedObjectContext,loggedUser:UUID){
         let newCard = Card(context:context)
         
         newCard.id = id
@@ -30,7 +29,7 @@ class CardVM{
         newCard.expiryDate = expiryDate
         newCard.cvv = cvv
         newCard.credit = credit
-        newCard.userId = userId
+        newCard.userId = loggedUser
         
         do{
             try context.save()
@@ -38,7 +37,5 @@ class CardVM{
         }catch{
             print("error al crear una tarjeta")
         }
-        
-        
     }
 }

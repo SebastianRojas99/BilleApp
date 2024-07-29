@@ -10,6 +10,7 @@ import CoreData
 
 struct CreditCards: View {
     @FetchRequest(entity: Card.entity(), sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)], animation: .spring()) var results:FetchedResults<Card>
+    @State var creditNumber = ""
     @Environment(UserVM.self)  var userVM
     @Environment(CardVM.self)  var cardVM
     @Environment(\.dismiss.self) var dismiss
@@ -41,15 +42,17 @@ struct CreditCards: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 20) {
-                    List{
-                        ForEach(results){ item in
+                    ForEach(results){ item in
+                        VStack{
                             
+                        }.onAppear{
+                            //creditNumber = number?.replacingOccurrences(of: "(\\d{4})(\\d{4})(\\d{4})(\\d{4})", with: "$1 $2 $3 $4",options: .regularExpression,range: nil) ?? number ?? ""
                         }
                     }
                     
-                    }
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
+}
