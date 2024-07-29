@@ -16,6 +16,7 @@ struct PersistenceController {
         container = NSPersistentContainer(name: "BilleDB")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+            
         }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {

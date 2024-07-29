@@ -19,7 +19,7 @@ struct BalanceView: View {
                 .frame(alignment: .center)
                 
                             
-            Text("$\(0)")
+            Text("$\(userVM.accountAmount)")
                 .font(.system(size:50))
                 .bold()
                 .frame(alignment: .center)

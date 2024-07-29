@@ -20,7 +20,7 @@ struct HomeScreen: View {
                     Dashboard()
                 
                 case "Cards":
-                    CreditCards().environment(userVM).environment(cardVM)
+                    CreditCards(user: userVM.user!).environment(userVM).environment(cardVM)
                     
                 case "Services":
                     ServicesMenu()

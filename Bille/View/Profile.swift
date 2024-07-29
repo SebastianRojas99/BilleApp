@@ -13,7 +13,7 @@ struct Profile: View {
     @State private var close:Bool = false
     var body: some View {
         NavigationStack{
-            Image(uservm.user?.image ?? "\(String(describing: uservm.user?.name))")
+            Image(uservm.user?.image ?? "")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 150,height: 150)

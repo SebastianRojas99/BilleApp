@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct NewCardModal: View {
-    @State private var cardNumber: String = ""
-    @State private var cardHolderName: String = ""
+    let types = ["VISA","MASTER CARD","AMERICAN EXPRESS", "MERCADO PAGO"]
+    @State private var number: String = ""
+    @State private var name: String = ""
     @State private var expiryDate: String = ""
     @State private var cvv: String = ""
-    @State private var cardType: String = ""
+    @State private var type: String = ""
     @Environment(UserVM.self) private var userVM
-    @Environment(CardVM.self)  var cardVM
+    @Environment(\.managedObjectContext) private var context
+    @State private var cardVM = CardVM()
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
@@ -22,15 +24,14 @@ struct NewCardModal: View {
                     .font(.largeTitle)
                     .bold()
             }
-            Spacer()
             
-            TextField("Enter card holder name", text: $cardHolderName)
+            TextField("Enter card holder name", text: $name)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
                 .padding(.bottom, 10)
             
-            TextField("Enter your card number", text: $cardNumber)
+            TextField("Enter your card number", text: $number)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
@@ -40,7 +41,7 @@ struct NewCardModal: View {
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
-                .padding(.bottom, 10)
+                .padding(.bottom, 10)            
             
             TextField("Enter CVV", text: $cvv)
                 .padding()
@@ -48,26 +49,31 @@ struct NewCardModal: View {
                 .cornerRadius(10)
                 .padding(.bottom, 10)
             
-            TextField("Enter card type (e.g., Visa, MasterCard)", text: $cardType)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
-                .padding(.bottom, 10)
+            Picker("", selection: $cardVM.type, content: {
+                ForEach(types,id: \.self){
+                    Text($0)
+                }
+            }).pickerStyle(.segmented)
             
             Button(action: {
-                //let newCard = CardTest(name: cardHolderName, typeCard: cardType, number: cardNumber, expiryDate: expiryDate, cvv: cvv, credit: 1000000.0)
-                //userVM.addCard(newCard, userVM.username ?? "")
-                cardHolderName = ""
-                cardType = ""
-                cardNumber = ""
-                expiryDate = ""
-                cvv = ""
+                cardVM.name = name
+                cardVM.number = number
+                cardVM.type = type
+                cardVM.expiryDate = expiryDate
+                cardVM.cvv = cvv
+                
+                if let loggedUser = userVM.user {
+                    cardVM.add(context: context,loggedUser: loggedUser.id ?? UUID())
+                } else {
+                    
+                    print("Error: No user logged in")
+                }
             }) {
                 Text("Add Card")
                     .bold()
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.blue)
+                    .background(.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }

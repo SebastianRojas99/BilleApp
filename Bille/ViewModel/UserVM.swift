@@ -58,6 +58,7 @@ class UserVM{
         newUser.role = role.rawValue
         newUser.state = state.rawValue
         newUser.accountamount = accountAmount
+        newUser.image = image
         
         do{
             try context.save()

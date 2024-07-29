@@ -7,8 +7,9 @@
 
 import SwiftUI
 
+
 struct RegisterView: View {
-    @Environment(UserVM.self) var userVM
+    @State var userVM = UserVM()
     @Environment(\.managedObjectContext) private var context
     @State var name: String = ""
     @State var lastname: String = ""
@@ -19,8 +20,7 @@ struct RegisterView: View {
     @State var password: String = ""
     @State var isActive: Bool = false
     @State var registrationMessage: String = ""
-    @State var isRegistered: Bool = false
-    @State var passwordPassed:Bool = false
+
     
     
     var body: some View {
@@ -43,13 +43,12 @@ struct RegisterView: View {
                                 Text("Name")
                                     .font(.title2)
                                     .foregroundStyle(.gray)
-                                TextField("", text: $name, prompt: Text("Enter name").foregroundStyle(.white))
+                                TextField("", text: $userVM.name, prompt: Text("Enter name").foregroundStyle(.white))
                                     .autocapitalization(.none)
                                     .frame(height: 20)
                                     .padding()
                                     .background(.pink)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    .minLength(text: $name, length: 2, show: passwordPassed)
                                     .maxLength(text: $name, length: 15, show: false)
                             }.padding(.horizontal, 5)
                             
@@ -57,7 +56,7 @@ struct RegisterView: View {
                                 Text("Lastname")
                                     .font(.title2)
                                     .foregroundStyle(.gray)
-                                TextField("", text: $lastname, prompt: Text("Enter lastname").foregroundStyle(.white))
+                                TextField("", text: $userVM.lastname, prompt: Text("Enter lastname").foregroundStyle(.white))
                                     .autocapitalization(.none)
                                     .frame(height: 20)
                                     .padding()
@@ -72,7 +71,7 @@ struct RegisterView: View {
                                 Text("Address")
                                     .font(.title2)
                                     .foregroundStyle(.gray)
-                                TextField("", text: $address, prompt: Text("Enter address").foregroundStyle(.white))
+                                TextField("", text: $userVM.address, prompt: Text("Enter address").foregroundStyle(.white))
                                     .autocapitalization(.none)
                                     .frame(height: 20)
                                     .padding()
@@ -85,7 +84,7 @@ struct RegisterView: View {
                                 Text("Birthday")
                                     .font(.title2)
                                     .foregroundStyle(.gray)
-                                DatePicker("", selection: $birthday, displayedComponents: .date)
+                                DatePicker("", selection: $userVM.birthday, displayedComponents: .date)
                                     .frame(height: 20)
                                     .padding()
                                     .background(.pink)
@@ -102,7 +101,7 @@ struct RegisterView: View {
                                 
                                 Spacer()
                             }
-                            TextField("", text: $email, prompt: Text("Enter email").foregroundStyle(.white))
+                            TextField("", text: $userVM.email, prompt: Text("Enter email").foregroundStyle(.white))
                                 .autocapitalization(.none)
                                 .frame(height: 20)
                                 .padding()
@@ -116,7 +115,7 @@ struct RegisterView: View {
                                     .foregroundStyle(.gray)
                                 Spacer()
                             }
-                            TextField("", text: $username, prompt: Text("Enter username").foregroundStyle(.white))
+                            TextField("", text: $userVM.username, prompt: Text("Enter username").foregroundStyle(.white))
                                 .autocapitalization(.none)
                                 .frame(height: 20)
                                 .padding()
@@ -130,12 +129,11 @@ struct RegisterView: View {
                                     .foregroundStyle(.gray)
                                 Spacer()
                             }
-                            SecureField("", text: $password, prompt: Text("Enter password").foregroundStyle(.white))
+                            SecureField("", text: $userVM.password, prompt: Text("Enter password").foregroundStyle(.white))
                                 .frame(height: 20)
                                 .padding()
                                 .background(.pink)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .minLength(text: $password, length: 3, show: passwordPassed)
                                 .maxLength(text: $password, length: 5, show: false)
                         }.padding().foregroundStyle(.gray)
                         
@@ -151,24 +149,8 @@ struct RegisterView: View {
                         
                         VStack {
                             Button {
-                                userVM.name = name
-                                userVM.lastname = lastname
-                                userVM.username = username
-                                userVM.email = email
-                                userVM.address = address
-                                userVM.password = password
-                                userVM.birthday = birthday
-                                
-                                if passwordPassed == true{
-                                    if userVM.isUserRegistered(username: username, context: context) {
-                                        registrationMessage = "User already registered"
-                                        isRegistered = true
-                                    } else {
                                         userVM.register(context: context)
                                         registrationMessage = "Registration successful"
-                                        isRegistered = false
-                                    }
-                                }
                                 
                                 
                             } label: {
@@ -185,7 +167,7 @@ struct RegisterView: View {
                                 .foregroundStyle(.white)
                             }
                             Text(registrationMessage)
-                                .foregroundStyle(isRegistered ? .red : .green)
+                                .foregroundStyle(.green)
                         }.padding(.bottom, 30)
                         
                         

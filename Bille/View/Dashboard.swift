@@ -20,7 +20,7 @@ struct Dashboard: View {
                     VStack(alignment: .leading) {
                         HStack{
                             VStack(alignment: .leading) {
-                                Text("Welcome \(userVM.username)!")
+                                Text("Welcome \(userVM.user?.username ?? "Invitado")!")
                                     .foregroundColor(.gray)
                                 Text("Dashboard")
                                     .font(.largeTitle)

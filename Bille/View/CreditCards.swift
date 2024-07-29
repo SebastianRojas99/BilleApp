@@ -9,7 +9,12 @@ import SwiftUI
 import CoreData
 
 struct CreditCards: View {
-    @FetchRequest(entity: Card.entity(), sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)], animation: .spring()) var results:FetchedResults<Card>
+    var user:User
+    var cards: FetchRequest<Card>
+    init(user:User){
+        self.user = user
+        cards = FetchRequest<Card>(entity: Card.entity(), sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)],predicate: NSPredicate(format: "userId == %@", user.id! as CVarArg))
+    }
     @State var creditNumber = ""
     @Environment(UserVM.self)  var userVM
     @Environment(CardVM.self)  var cardVM
@@ -42,9 +47,11 @@ struct CreditCards: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 20) {
-                    ForEach(results){ item in
+                    ForEach(cards.wrappedValue){ item in
                         VStack{
-                            
+                            Text(item.name ?? "")
+                            Text(item.number ?? "")
+                            Text(item.expiryDate ?? "")
                         }.onAppear{
                             //creditNumber = number?.replacingOccurrences(of: "(\\d{4})(\\d{4})(\\d{4})(\\d{4})", with: "$1 $2 $3 $4",options: .regularExpression,range: nil) ?? number ?? ""
                         }

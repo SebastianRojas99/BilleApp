@@ -13,18 +13,19 @@ import Observation
 class CardVM{
     var id = UUID()
     var name:String = ""
-    var number:Int = 0
+    var number:String = ""
     var type:String = ""
     var expiryDate:String = ""
     var cvv:String = ""
-    var credit:Double = 0.00
+    var credit:Double = 15000.0
+    
     
     func add(context:NSManagedObjectContext,loggedUser:UUID){
         let newCard = Card(context:context)
         
         newCard.id = id
         newCard.name = name
-        newCard.number = Int16(number)
+        newCard.number = number
         newCard.type = type
         newCard.expiryDate = expiryDate
         newCard.cvv = cvv
@@ -36,6 +37,18 @@ class CardVM{
             print("tarjeta guardada")
         }catch{
             print("error al crear una tarjeta")
+        }
+    }
+    func getCardsForUser(context: NSManagedObjectContext, userId: UUID) -> [Card] {
+        let fetchRequest: NSFetchRequest<Card> = Card.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "userId == %@", userId as CVarArg)
+        
+        do {
+            let cards = try context.fetch(fetchRequest)
+            return cards
+        } catch {
+            print("Error al obtener las tarjetas: \(error.localizedDescription)")
+            return []
         }
     }
 }

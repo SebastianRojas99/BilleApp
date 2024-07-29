@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct LoginView: View {
     @Environment(\.dismiss.self) var dismiss
     @Environment(UserVM.self) var userVM
@@ -118,7 +119,7 @@ struct LoginView: View {
                         .foregroundStyle(.white)
                 }.padding(.bottom,30)
             }.foregroundStyle(.gray)
-        }.environment(userVM)
+        }
         
     }
     
