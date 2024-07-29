@@ -25,8 +25,9 @@ class UserVM{
     var state:state = .active
     var loginMessage:String = ""
     var isLogged: Bool = false
-    var accountAmount:String = "0"
+    var accountAmount:Decimal = 15000
     var user:User?
+    
     
     func isUserRegistered(username: String, context: NSManagedObjectContext) -> Bool {
         let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
@@ -57,7 +58,7 @@ class UserVM{
         newUser.birthday = birthday
         newUser.role = role.rawValue
         newUser.state = state.rawValue
-        newUser.accountamount = accountAmount
+        newUser.accountamount = (accountAmount) as NSDecimalNumber
         newUser.image = image
         
         do{
@@ -86,6 +87,52 @@ class UserVM{
             } catch {
                 loginMessage = "Error: \(error.localizedDescription)"
                 isLogged = false
+            }
+        }
+    
+    func send(amount: Decimal, to recipientUsername: String, context: NSManagedObjectContext) {
+            guard let sender = user else {
+                loginMessage = "Error: No user logged in"
+                return
+            }
+            
+            if amount <= 0 {
+                loginMessage = "Error: Invalid amount"
+                return
+            }
+            
+            let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "username == %@", recipientUsername)
+            
+            do {
+                let recipients = try context.fetch(fetchRequest)
+                if recipients.isEmpty {
+                    loginMessage = "Error: Recipient not found"
+                    return
+                }
+                
+                guard let recipient = recipients.first else {
+                    loginMessage = "Error: Recipient not found"
+                    return
+                }
+                
+                if sender.accountamount?.decimalValue ?? 0 < amount {
+                    loginMessage = "Error: Insufficient funds"
+                    return
+                }
+                
+                // Deduct the amount from the sender's account
+                sender.accountamount = (sender.accountamount?.decimalValue ?? 0 - amount) as NSDecimalNumber
+                
+                // Add the amount to the recipient's account
+                recipient.accountamount = (recipient.accountamount?.decimalValue ?? 0 + amount) as NSDecimalNumber
+                
+                try context.save()
+                loginMessage = "Transaction successful"
+                print("Transaction successful: \(amount) sent from \(sender.username ?? "") to \(recipient.username ?? "")")
+                
+            } catch {
+                loginMessage = "Error: \(error.localizedDescription)"
             }
         }
 

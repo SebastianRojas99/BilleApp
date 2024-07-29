@@ -16,7 +16,7 @@ struct NewCardModal: View {
     @State private var type: String = ""
     @Environment(UserVM.self) private var userVM
     @Environment(\.managedObjectContext) private var context
-    @State private var cardVM = CardVM()
+    @Environment(CardVM.self) private var cardVM
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
@@ -49,7 +49,7 @@ struct NewCardModal: View {
                 .cornerRadius(10)
                 .padding(.bottom, 10)
             
-            Picker("", selection: $cardVM.type, content: {
+            Picker("", selection: $type, content: {
                 ForEach(types,id: \.self){
                     Text($0)
                 }

@@ -17,7 +17,7 @@ class CardVM{
     var type:String = ""
     var expiryDate:String = ""
     var cvv:String = ""
-    var credit:Double = 15000.0
+    var credit:Decimal = 15000.00
     
     
     func add(context:NSManagedObjectContext,loggedUser:UUID){
@@ -29,7 +29,7 @@ class CardVM{
         newCard.type = type
         newCard.expiryDate = expiryDate
         newCard.cvv = cvv
-        newCard.credit = credit
+        newCard.credit = (credit) as NSDecimalNumber
         newCard.userId = loggedUser
         
         do{

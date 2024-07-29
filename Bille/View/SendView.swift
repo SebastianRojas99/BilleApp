@@ -40,6 +40,4 @@ struct SendView: View {
     }
 }
 
-#Preview {
-    SendView().environment(UserVMT())
-}
+
