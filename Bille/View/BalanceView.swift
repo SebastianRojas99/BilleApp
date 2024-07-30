@@ -11,6 +11,7 @@ struct BalanceView: View {
     @Environment(UserVM.self) private var userVM
     @State var currencies:CurrencyVM?
     @State var isPresented:Bool = false
+    @State var value:Decimal = 0
     var body: some View {
         VStack(alignment:.center){
             Text("Total balance")
@@ -19,11 +20,14 @@ struct BalanceView: View {
                 .frame(alignment: .center)
                 
                             
-            Text("$\(userVM.accountAmount)")
+            Text("$\(value)")
                 .font(.system(size:50))
                 .bold()
                 .frame(alignment: .center)
                 .padding(.bottom,5)
+                .onAppear{
+                    value = (userVM.user?.accountamount ?? 0) as Decimal
+                }
                 
             
             HStack {
@@ -74,6 +78,4 @@ struct BalanceView: View {
     }
 }
 
-#Preview {
-    BalanceView()
-}
+

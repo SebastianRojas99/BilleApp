@@ -27,6 +27,7 @@ class UserVM{
     var isLogged: Bool = false
     var accountAmount:Decimal = 15000
     var user:User?
+    var sendMessage:String = ""
     
     
     func isUserRegistered(username: String, context: NSManagedObjectContext) -> Bool {
@@ -90,50 +91,42 @@ class UserVM{
             }
         }
     
-    func send(amount: Decimal, to recipientUsername: String, context: NSManagedObjectContext) {
-            guard let sender = user else {
-                loginMessage = "Error: No user logged in"
-                return
-            }
-            
-            if amount <= 0 {
-                loginMessage = "Error: Invalid amount"
-                return
-            }
-            
-            let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "username == %@", recipientUsername)
-            
-            do {
-                let recipients = try context.fetch(fetchRequest)
-                if recipients.isEmpty {
-                    loginMessage = "Error: Recipient not found"
-                    return
-                }
-                
-                guard let recipient = recipients.first else {
-                    loginMessage = "Error: Recipient not found"
-                    return
-                }
-                
-                if sender.accountamount?.decimalValue ?? 0 < amount {
-                    loginMessage = "Error: Insufficient funds"
-                    return
-                }
-                
-                // Deduct the amount from the sender's account
-                sender.accountamount = (sender.accountamount?.decimalValue ?? 0 - amount) as NSDecimalNumber
-                
-                // Add the amount to the recipient's account
-                recipient.accountamount = (recipient.accountamount?.decimalValue ?? 0 + amount) as NSDecimalNumber
-                
-                try context.save()
-                loginMessage = "Transaction successful"
-                print("Transaction successful: \(amount) sent from \(sender.username ?? "") to \(recipient.username ?? "")")
-                
-            } catch {
-                loginMessage = "Error: \(error.localizedDescription)"
-            }
+    func send(to receiverUsername: String, amount: Decimal, context: NSManagedObjectContext) {
+        guard let sender = user, let senderAccountAmount = sender.accountamount as Decimal? else {
+            sendMessage = "Sender is not logged in or sender account amount is not available"
+            return
         }
+        
+        if senderAccountAmount < amount {
+            sendMessage = "Insufficient funds"
+            return
+        }
+        
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "username == %@", receiverUsername)
+        
+        do {
+            let users = try context.fetch(fetchRequest)
+            if users.isEmpty {
+                sendMessage = "Receiver not found"
+                return
+            }
+            
+            guard let receiver = users.first else {
+                sendMessage = "Failed to get receiver"
+                return
+            }
+            
+            sender.accountamount = (senderAccountAmount - amount) as NSDecimalNumber
+            receiver.accountamount = ((receiver.accountamount as Decimal? ?? 0) + amount) as NSDecimalNumber
+            
+            sendMessage = "Transaction successful"
+            
+            try context.save()            
+        } catch {
+            print("Failed to send money: \(error.localizedDescription)")
+        }
+    }
+    
 
 }
