@@ -39,6 +39,28 @@ class CardVM{
             print("error al crear una tarjeta")
         }
     }
+    
+    func createCardForUser(context:NSManagedObjectContext,userId:UUID,nameAndLast:String, creditUser:Decimal){
+        let userCard = Card(context: context)
+        
+        userCard.id = id
+        userCard.name = nameAndLast
+        userCard.number = number.cardNum()
+        userCard.type = "BILLE CARD"
+        userCard.expiryDate = "12/30"
+        userCard.cvv = cvv.randomizer()
+        userCard.credit = creditUser as NSDecimalNumber
+        userCard.userId = userId
+        
+        do{
+            try context.save()
+            print("tarjeta usuario \(nameAndLast) creada")
+        }catch{
+            print("error en ",error.localizedDescription)
+        }
+        
+    }
+    
     func getCardsForUser(context: NSManagedObjectContext, userId: UUID) -> [Card] {
         let fetchRequest: NSFetchRequest<Card> = Card.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "userId == %@", userId as CVarArg)

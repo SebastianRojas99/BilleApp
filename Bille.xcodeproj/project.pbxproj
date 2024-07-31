@@ -47,6 +47,7 @@
 		96C824A42C275E8B009A62F7 /* ServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C824A32C275E8B009A62F7 /* ServicesTests.swift */; };
 		96D1A65A2C3607BC00080A64 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1A6592C3607BC00080A64 /* BalanceView.swift */; };
 		96D1A65E2C36B33C00080A64 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1A65D2C36B33C00080A64 /* Category.swift */; };
+		96F147EB2C5A5588005F68DB /* RandomizerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F147EA2C5A5588005F68DB /* RandomizerUtils.swift */; };
 		96F698652C496E6300372DE6 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F698642C496E6300372DE6 /* DateUtils.swift */; };
 		96FB810B2C528A38006D81A6 /* CardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB810A2C528A37006D81A6 /* CardVM.swift */; };
 		96FB810D2C52979E006D81A6 /* TextFieldsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB810C2C52979E006D81A6 /* TextFieldsUtils.swift */; };
@@ -93,6 +94,7 @@
 		96C824A32C275E8B009A62F7 /* ServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTests.swift; sourceTree = "<group>"; };
 		96D1A6592C3607BC00080A64 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		96D1A65D2C36B33C00080A64 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		96F147EA2C5A5588005F68DB /* RandomizerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerUtils.swift; sourceTree = "<group>"; };
 		96F698642C496E6300372DE6 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		96FB810A2C528A37006D81A6 /* CardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVM.swift; sourceTree = "<group>"; };
 		96FB810C2C52979E006D81A6 /* TextFieldsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsUtils.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				967D07BB2C4024090042215D /* ColorUtils.swift */,
 				96F698642C496E6300372DE6 /* DateUtils.swift */,
 				96FB810C2C52979E006D81A6 /* TextFieldsUtils.swift */,
+				96F147EA2C5A5588005F68DB /* RandomizerUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				967D07BC2C4024090042215D /* ColorUtils.swift in Sources */,
 				967D07C22C4173B70042215D /* Profile.swift in Sources */,
 				96AAB7682C2477E0004DD26E /* CardVMT.swift in Sources */,
+				96F147EB2C5A5588005F68DB /* RandomizerUtils.swift in Sources */,
 				96B339BB2C1D423B00B910A5 /* RegisterModal.swift in Sources */,
 				96B339BF2C1D4A3A00B910A5 /* UserVMT.swift in Sources */,
 				96B339BD2C1D49CA00B910A5 /* RegisterView.swift in Sources */,

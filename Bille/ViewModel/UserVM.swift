@@ -27,7 +27,9 @@ class UserVM{
     var isLogged: Bool = false
     var accountAmount:Decimal = 15000
     var user:User?
+    var card:Card?
     var sendMessage:String = ""
+    
     
     
     func isUserRegistered(username: String, context: NSManagedObjectContext) -> Bool {
@@ -62,9 +64,13 @@ class UserVM{
         newUser.accountamount = (accountAmount) as NSDecimalNumber
         newUser.image = image
         
+        
+        
         do{
             try context.save()
             print("added and working")
+            let cardVM = CardVM()
+            cardVM.createCardForUser(context: context, userId: newUser.id ?? UUID(), nameAndLast: "\(newUser.name ?? "" + " " + (newUser.lastname ?? ""))", creditUser: (newUser.accountamount ?? 0.00) as Decimal)
         }catch{
             print("Failed to register user: \(error.localizedDescription)")
         }

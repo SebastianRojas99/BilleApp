@@ -104,6 +104,8 @@ struct CreditCards: View {
             return [.black.opacity(0.7), .gray.opacity(0.5)]
         case "AMERICAN EXPRESS":
             return [Color(red: 229/255, green: 228/255, blue: 226/255), Color(red: 192/255, green: 192/255, blue: 192/255)]
+        case "BILLE CARD":
+            return [.black.opacity(0.7),.black.opacity(0.5)]
         default:
             return [.blue, .purple]
         }
