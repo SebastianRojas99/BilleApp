@@ -38,7 +38,7 @@ struct SendView: View {
                         transactionMessage = "Invalid amount"
                         return
                     }
-                    cardVM.send(to: username, amount: amount, context: context)
+                    //cardVM.send(to: username, amount: amount, context: context)
                     transactionMessage = cardVM.sendMessage
                 } label: {
                     Text("Send")
