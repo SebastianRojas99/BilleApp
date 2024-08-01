@@ -8,6 +8,7 @@ import SwiftUI
 
 struct SendView: View {
     @Environment(UserVM.self) private var userVM
+    @Environment(CardVM.self) private var cardVM
     @Environment(\.managedObjectContext) private var context
     @State private var username: String = ""
     @State private var money: String = ""
@@ -18,7 +19,7 @@ struct SendView: View {
             VStack {
                 Text("Transfer")
                     .font(.largeTitle)
-                Text("Your amount: \(userVM.user?.accountamount?.stringValue ?? "0")")
+                Text("Your amount: \(cardVM.credit)")
                     .padding()
 
                 VStack {
@@ -37,8 +38,8 @@ struct SendView: View {
                         transactionMessage = "Invalid amount"
                         return
                     }
-                    userVM.send(to: username, amount: amount, context: context)
-                    transactionMessage = userVM.sendMessage
+                    cardVM.send(to: username, amount: amount, context: context)
+                    transactionMessage = cardVM.sendMessage
                 } label: {
                     Text("Send")
                 }

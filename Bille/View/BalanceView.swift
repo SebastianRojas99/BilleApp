@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BalanceView: View {
     @Environment(UserVM.self) private var userVM
+    @Environment(CardVM.self) private var cardVM
     @State var currencies:CurrencyVM?
     @State var isPresented:Bool = false
     @State var value:Decimal = 0
@@ -26,7 +27,7 @@ struct BalanceView: View {
                 .frame(alignment: .center)
                 .padding(.bottom,5)
                 .onAppear{
-                    value = (userVM.user?.accountamount ?? 0) as Decimal
+                    
                 }
                 
             
