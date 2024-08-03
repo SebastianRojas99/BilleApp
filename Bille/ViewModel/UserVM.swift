@@ -87,7 +87,7 @@ class UserVM{
                     isLogged = false
                 } else {
                     loginMessage = "Login successful"
-                    let cardVM = CardVM()
+                    
                     isLogged = true
                     user = users.first                    
                     print("logged")
