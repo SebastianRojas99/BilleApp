@@ -80,6 +80,10 @@ class CardVM{
         }
     }
     
+    func delete(){
+        
+    }
+    
     
 //    func send(to receiverUsername: String, amount: Decimal, context: NSManagedObjectContext) {
 //        guard let card = card, let senderAccountAmount = card.credit as Decimal? else {
