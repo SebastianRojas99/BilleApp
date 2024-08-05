@@ -12,7 +12,7 @@ struct SendView: View {
     @Environment(\.managedObjectContext) private var context
     @State private var username: String = ""
     @State private var money: String = ""
-    @State private var actualBalance: Decimal = 0
+    @State var actualBalance: Decimal = 0
     @State private var transactionMessage: String = ""
 
     var body: some View {
@@ -23,7 +23,7 @@ struct SendView: View {
                 Text("Your amount: \(actualBalance)")
                     .padding()
                     .onAppear{
-                        actualBalance = userVM.balance
+                        actualBalance = (userVM.user?.balance ?? 0) as Decimal
                     }
 
                 VStack {
@@ -42,7 +42,7 @@ struct SendView: View {
                         transactionMessage = "Invalid amount"
                         return
                     }
-                    //cardVM.send(to: username, amount: amount, context: context)
+                    userVM.send(to: username, amount: Decimal(string:money) ?? 0 , context: context)
                     transactionMessage = cardVM.sendMessage
                 } label: {
                     Text("Send")

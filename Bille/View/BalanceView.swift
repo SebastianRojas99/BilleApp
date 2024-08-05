@@ -27,7 +27,7 @@ struct BalanceView: View {
                 .frame(alignment: .center)
                 .padding(.bottom,5)
                 .onAppear{
-                    
+                    value = (userVM.user?.balance ?? 0) as Decimal
                 }
                 
             
