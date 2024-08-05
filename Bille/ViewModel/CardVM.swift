@@ -80,6 +80,10 @@ class CardVM{
         }
     }
     
+    func update(){
+        
+    }
+    
     func delete(){
         
     }
