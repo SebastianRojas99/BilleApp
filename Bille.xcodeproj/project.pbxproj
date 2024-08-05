@@ -42,9 +42,9 @@
 		96B339BB2C1D423B00B910A5 /* RegisterModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B339BA2C1D423B00B910A5 /* RegisterModal.swift */; };
 		96B339BD2C1D49CA00B910A5 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B339BC2C1D49CA00B910A5 /* RegisterView.swift */; };
 		96B339BF2C1D4A3A00B910A5 /* UserVMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B339BE2C1D4A3A00B910A5 /* UserVMT.swift */; };
-		96B4C2F12C5D47CA0049CE40 /* BilleDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96B4C2EF2C5D47CA0049CE40 /* BilleDB.xcdatamodeld */; };
 		96C367692C210FDC00988460 /* CurrencyMenuTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C367682C210FDC00988460 /* CurrencyMenuTest.swift */; };
 		96C824A42C275E8B009A62F7 /* ServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C824A32C275E8B009A62F7 /* ServicesTests.swift */; };
+		96CDB4EC2C60E6D400F1B9BF /* BilleDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96CDB4EA2C60E6D400F1B9BF /* BilleDB.xcdatamodeld */; };
 		96D1A65A2C3607BC00080A64 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1A6592C3607BC00080A64 /* BalanceView.swift */; };
 		96D1A65E2C36B33C00080A64 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1A65D2C36B33C00080A64 /* Category.swift */; };
 		96F147EB2C5A5588005F68DB /* RandomizerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F147EA2C5A5588005F68DB /* RandomizerUtils.swift */; };
@@ -89,9 +89,9 @@
 		96B339BA2C1D423B00B910A5 /* RegisterModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModal.swift; sourceTree = "<group>"; };
 		96B339BC2C1D49CA00B910A5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		96B339BE2C1D4A3A00B910A5 /* UserVMT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVMT.swift; sourceTree = "<group>"; };
-		96B4C2F02C5D47CA0049CE40 /* BilleDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BilleDB.xcdatamodel; sourceTree = "<group>"; };
 		96C367682C210FDC00988460 /* CurrencyMenuTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyMenuTest.swift; sourceTree = "<group>"; };
 		96C824A32C275E8B009A62F7 /* ServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTests.swift; sourceTree = "<group>"; };
+		96CDB4EB2C60E6D400F1B9BF /* BilleDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BilleDB.xcdatamodel; sourceTree = "<group>"; };
 		96D1A6592C3607BC00080A64 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		96D1A65D2C36B33C00080A64 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		96F147EA2C5A5588005F68DB /* RandomizerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerUtils.swift; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		96B339B22C1D343700B910A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				96B4C2EF2C5D47CA0049CE40 /* BilleDB.xcdatamodeld */,
+				96CDB4EA2C60E6D400F1B9BF /* BilleDB.xcdatamodeld */,
 				966462ED2C2092F60010C414 /* Currency.swift */,
 				96D1A65D2C36B33C00080A64 /* Category.swift */,
 				9628BEB92C4E81C00002B392 /* Persistance.swift */,
@@ -354,7 +354,7 @@
 				96D1A65A2C3607BC00080A64 /* BalanceView.swift in Sources */,
 				96F698652C496E6300372DE6 /* DateUtils.swift in Sources */,
 				96C824A42C275E8B009A62F7 /* ServicesTests.swift in Sources */,
-				96B4C2F12C5D47CA0049CE40 /* BilleDB.xcdatamodeld in Sources */,
+				96CDB4EC2C60E6D400F1B9BF /* BilleDB.xcdatamodeld in Sources */,
 				961F2F4D2C21E0A000D83602 /* CreditCardTest.swift in Sources */,
 				96B339A52C1D306800B910A5 /* BilleApp.swift in Sources */,
 				966462EE2C2092F60010C414 /* Currency.swift in Sources */,
@@ -617,14 +617,14 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		96B4C2EF2C5D47CA0049CE40 /* BilleDB.xcdatamodeld */ = {
+		96CDB4EA2C60E6D400F1B9BF /* BilleDB.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				96B4C2F02C5D47CA0049CE40 /* BilleDB.xcdatamodel */,
+				96CDB4EB2C60E6D400F1B9BF /* BilleDB.xcdatamodel */,
 			);
-			currentVersion = 96B4C2F02C5D47CA0049CE40 /* BilleDB.xcdatamodel */;
+			currentVersion = 96CDB4EB2C60E6D400F1B9BF /* BilleDB.xcdatamodel */;
 			name = BilleDB.xcdatamodeld;
-			path = /Users/seba/Desktop/BilleDB.xcdatamodeld;
+			path = "/Users/seba/Desktop/Bille/Bille-Mobile/BilleApp/Bille/Model/BilleDB.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

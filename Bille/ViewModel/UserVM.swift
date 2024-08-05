@@ -25,6 +25,7 @@ class UserVM{
     var state:state = .active
     var loginMessage:String = ""
     var isLogged: Bool = false
+    var balance: Decimal = 15000
     var user:User?
     var card:Card?
     var sendMessage:String = ""
@@ -63,6 +64,7 @@ class UserVM{
         newUser.role = role.rawValue
         newUser.state = state.rawValue
         newUser.image = image
+        newUser.balance = (balance) as NSDecimalNumber
         
         
         
@@ -97,5 +99,48 @@ class UserVM{
                 isLogged = false
             }
         }
+    
+        func send(to receiverUsername: String, amount: Decimal, context: NSManagedObjectContext) {
+            guard let user = user, let senderAccountAmount = user.balance as Decimal? else {
+                sendMessage = "Sender is not logged in or sender account amount is not available"
+                return
+            }
+    
+            if senderAccountAmount < amount {
+                sendMessage = "Insufficient funds"
+                return
+            }
+    
+            
+            let userFetchRequest: NSFetchRequest<User> = User.fetchRequest()
+            userFetchRequest.predicate = NSPredicate(format: "username == %@", receiverUsername)
+    
+            do {
+                let users = try context.fetch(userFetchRequest)
+                if users.isEmpty {
+                    sendMessage = "Receiver not found"
+                    return
+                }
+    
+                guard let receiver = users.first else {
+                    sendMessage = "Failed to get receiver"
+                    return
+                }
+    
+                                
+    
+                // Perform the transaction
+                user.balance = (senderAccountAmount - amount) as NSDecimalNumber
+                receiver.balance = (senderAccountAmount + amount) as NSDecimalNumber
+    
+                sendMessage = "Transaction successful"
+    
+                try context.save()
+            } catch {
+                print("Failed to send money: \(error.localizedDescription)")
+                sendMessage = "Failed to send money: \(error.localizedDescription)"
+            }
+        }
+
 }
 

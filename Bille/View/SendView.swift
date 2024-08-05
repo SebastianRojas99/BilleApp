@@ -12,6 +12,7 @@ struct SendView: View {
     @Environment(\.managedObjectContext) private var context
     @State private var username: String = ""
     @State private var money: String = ""
+    @State private var actualBalance: Decimal = 0
     @State private var transactionMessage: String = ""
 
     var body: some View {
@@ -19,8 +20,11 @@ struct SendView: View {
             VStack {
                 Text("Transfer")
                     .font(.largeTitle)
-                Text("Your amount: \(cardVM.credit)")
+                Text("Your amount: \(actualBalance)")
                     .padding()
+                    .onAppear{
+                        actualBalance = userVM.balance
+                    }
 
                 VStack {
                     TextField("Enter the username", text: $username)
