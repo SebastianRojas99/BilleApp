@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 import Observation
+import SwiftUI
 
 @Observable
 class CardVM{
@@ -87,6 +88,7 @@ class CardVM{
     
     
 
+    
 
 
     

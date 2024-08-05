@@ -60,31 +60,48 @@ struct CreditCards: View {
                 VStack(spacing: 20) {
                     ForEach(cards) { item in
                         VStack {
-                            VStack(alignment: .leading) {
-                                Text(item.number ?? "")
-                                    .font(.system(size: 24))
-                                    .foregroundColor(.white)
-                                    .bold()
-                                Spacer()
-                                HStack {
-                                    Text(item.type ?? "")
+                            ZStack {
+                                // Background Image
+                                if let imageName = getImageName(for: item.type) {
+                                    Image(imageName)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 300, height: 200)
+                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                                }
+                                
+                                // Background Gradient
+                                LinearGradient(colors: getCardColors(for: item.type), startPoint: .topLeading, endPoint: .bottomTrailing)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .opacity(0.3) // Adjust opacity as needed
+                                
+                                // Card Content
+                                VStack(alignment: .leading) {
+                                    Text(item.number ?? "")
+                                        .font(.system(size: 24))
                                         .foregroundColor(.white)
-                                        .font(.title2)
+                                        .bold()
                                     Spacer()
-                                    VStack(alignment: .leading) {
-                                        Text(item.expiryDate ?? "")
-                                            .font(.title3)
+                                    HStack {
+                                        Text(item.type ?? "")
                                             .foregroundColor(.white)
-                                        Text(item.cvv ?? "")
-                                            .font(.title3)
-                                            .foregroundColor(.white)
+                                            .font(.title2)
+                                        Spacer()
+                                        VStack(alignment: .leading) {
+                                            Text(item.expiryDate ?? "")
+                                                .font(.title3)
+                                                .foregroundColor(.white)
+                                            Text(item.cvv ?? "")
+                                                .font(.title3)
+                                                .foregroundColor(.white)
+                                            
+                                        }
                                     }
                                 }
+                                .padding(8)
                             }
                         }
-                        .padding()
                         .frame(width: 300, height: 200)
-                        .background(LinearGradient(colors: getCardColors(for: item.type), startPoint: .topLeading, endPoint: .bottomTrailing))
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .onAppear {
                             creditNumber = item.number?.replacingOccurrences(of: "(\\d{4})(\\d{4})(\\d{4})(\\d{4})", with: "$1 $2 $3 $4", options: .regularExpression, range: nil) ?? item.number ?? ""
@@ -96,6 +113,8 @@ struct CreditCards: View {
         }
     }
 
+    //DESIGN FUNCTIONS
+    
     func getCardColors(for cardType: String?) -> [Color] {
         switch cardType {
         case "MASTERCARD":
@@ -105,9 +124,19 @@ struct CreditCards: View {
         case "AMERICAN EXPRESS":
             return [Color(red: 229/255, green: 228/255, blue: 226/255), Color(red: 192/255, green: 192/255, blue: 192/255)]
         case "BILLE CARD":
-            return [.black.opacity(0.7),.black.opacity(0.5)]
+            return [.black.opacity(0.7), .black.opacity(0.5)]
         default:
             return [.blue, .purple]
         }
     }
+
+    func getImageName(for cardType: String?) -> String? {
+        switch cardType {
+        case "BILLE CARD":
+            return "cardFont"
+        default:
+            return nil
+        }
+    }
+
 }
