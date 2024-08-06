@@ -94,7 +94,7 @@ struct CreditCards: View {
                                             Text(item.cvv ?? "")
                                                 .font(.title3)
                                                 .foregroundColor(.white)
-                                            
+                                                
                                         }
                                     }
                                 }
@@ -105,7 +105,7 @@ struct CreditCards: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .onAppear {
                             creditNumber = item.number?.replacingOccurrences(of: "(\\d{4})(\\d{4})(\\d{4})(\\d{4})", with: "$1 $2 $3 $4", options: .regularExpression, range: nil) ?? item.number ?? ""
-                        }
+                        }                        
                     }
                 }
             }

@@ -85,11 +85,6 @@ class CardVM{
     func delete(){
         
     }
-    
-    
-
-    
-
 
     
 }
