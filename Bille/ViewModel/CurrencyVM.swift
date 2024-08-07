@@ -39,8 +39,6 @@ class CurrencyVM{
                     self.errorFlag = true
                 }
             }
-        
-        
     }
     
     func dolarValue() -> Double {
@@ -50,6 +48,4 @@ class CurrencyVM{
             return 0
         }
     }
-    
-    
 }

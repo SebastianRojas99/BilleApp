@@ -19,7 +19,6 @@ class UserVM{
     var email:String = ""
     var address:String = ""
     var birthday:Date = Date()
-    var image:String = ""
     var password:String = ""
     var role:role = .user
     var state:state = .active
@@ -29,8 +28,6 @@ class UserVM{
     var user:User?
     var card:Card?
     var sendMessage:String = ""
-    
-    
     
     
     
@@ -62,8 +59,7 @@ class UserVM{
         newUser.password = password
         newUser.birthday = birthday
         newUser.role = role.rawValue
-        newUser.state = state.rawValue
-        newUser.image = image
+        newUser.state = state.rawValue        
         newUser.balance = (balance) as NSDecimalNumber
         
         

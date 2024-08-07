@@ -13,11 +13,14 @@ struct Profile: View {
     @State private var close:Bool = false
     var body: some View {
         NavigationStack{
-            Image(uservm.user?.image ?? "")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 150,height: 150)
-                .clipShape(Circle())
+            ZStack {
+                Circle()
+                    .frame(width: 150, height: 150)
+                    .foregroundStyle(.cyan)
+                Text((uservm.user?.name?.prefix(1) ?? "") + (uservm.user?.lastname?.prefix(1) ?? ""))
+                    .font(.system(size: 50))
+                    .foregroundStyle(.white)
+            }
             HStack{
                 Text(uservm.user?.name ?? "")
                     .font(.largeTitle)
