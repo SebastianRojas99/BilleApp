@@ -11,5 +11,7 @@ import CoreData
 
 @Observable
 class ServicesVM{
-    
+    func add(){
+        
+    }
 }
